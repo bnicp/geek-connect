@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "day": "^0.0.2",
+    "install": "^0.13.0",
+    "lodash": "^4.17.21",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0"
+  }
+}
