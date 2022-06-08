@@ -1,13 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
+<<<<<<< HEAD
+const sequelize = require('../config/connections');
+=======
 const sequelize = require('../config/connection.js');
+>>>>>>> abdbfb6e2364086fcdf48e95bf52dd0dcb679f44
 
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
+// login 
 User.init(
   {
     id: {
@@ -35,6 +39,15 @@ User.init(
         len: [8],
       },
     },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+        // add restriction on age
+      }
+    },
+    // work on entering interest in which fantasy world
   },
   {
     hooks: {
