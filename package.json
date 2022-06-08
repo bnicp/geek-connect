@@ -1,12 +1,24 @@
 {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "day": "^0.0.2",
+
+    "dotenv": "^16.0.1",
+
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+
     "install": "^0.13.0",
     "lodash": "^4.17.21",
     "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.20.1",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
   }

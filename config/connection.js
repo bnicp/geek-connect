@@ -13,9 +13,10 @@ if (process.env.GEEKCONNECTDB_URL) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: 3001
+      // port: 3001
     }
   );
 }
+
 
 module.exports = sequelize;
