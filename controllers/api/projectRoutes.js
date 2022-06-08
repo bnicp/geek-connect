@@ -1,5 +1,28 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Project, User } = require('../../models');
+
+// get homepage showing list of profiles on site
+router.get('/', async (req, res) => {
+  try {
+    const projectData = await Project.findAll({
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+
+    const projects = projectData.map((project) => project.get({ plain: true }));
+
+    res.render('project', {
+      ...project,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 
 router.post('/', async (req, res) => {
   try {
