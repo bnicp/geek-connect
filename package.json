@@ -1,14 +1,33 @@
 {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "day": "^0.0.2",
+<<<<<<< HEAD
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+=======
+
+    "dotenv": "^16.0.1",
+
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+
+>>>>>>> abdbfb6e2364086fcdf48e95bf52dd0dcb679f44
     "install": "^0.13.0",
     "lodash": "^4.17.21",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+<<<<<<< HEAD
+=======
+    "sequelize": "^6.20.1",
+>>>>>>> abdbfb6e2364086fcdf48e95bf52dd0dcb679f44
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
   }

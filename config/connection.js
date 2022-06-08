@@ -18,4 +18,5 @@ if (process.env.GEEKCONNECTDB_URL) {
   );
 }
 
+
 module.exports = sequelize;
