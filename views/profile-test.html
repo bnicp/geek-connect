@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>Geek Connection</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="../public/css/reset.css" />
     <link rel="stylesheet" href="../public/css/main.css" />
     <link rel="stylesheet" href="../public/css/profile.css" />
@@ -32,35 +36,35 @@
           </section>
         </div>
         <section id="matched-users grid-item grid-item-3">
-          <div class="card right">
-            userOne
-            <div class="">
-              <p>usernameOne Star Wars</p>
+          <div class="card">
+            <h3>userOne</h3>
+            <div>
+              <h4>Star Wars</h4>
             </div>
-            <div class="">
-              <p>House: Sith</p>
+            <div>
+              <h5>Sith</h5>
+            </div>
+            <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+            <button type="button" class="comment-button">comment</button>
+          </div>
+          <div class="card">
+            <h3>userTwo</h3>
+            <div>
+              <h4>Harry Potter</h4>
+            </div>
+            <div>
+              <h5>Slitherin</h5>
             </div>
             <button type="button" class="like-button">like</button>
             <button type="button" class="comment-button">comment</button>
           </div>
-          <div class="card right">
-            userTwo
-            <div class="">
-              <p>usernameTwo Harry Potter</p>
+          <div class="card">
+            <h3>userThree</h3>
+            <div>
+              <h4>Game Of Thronez</h4>
             </div>
-            <div class="">
-              <p>House: Slitherin</p>
-            </div>
-            <button type="button" class="like-button">like</button>
-            <button type="button" class="comment-button">comment</button>
-          </div>
-          <div class="card right">
-            userThree
-            <div class="">
-              <p>usernameThree Game of Thrones</p>
-            </div>
-            <div class="">
-              <p>House: Lannister</p>
+            <div>
+              <h5>Lannister</h5>
             </div>
             <button type="button" class="like-button">like</button>
             <button type="button" class="comment-button">comment</button>
@@ -68,5 +72,6 @@
         </section>
       </main>
     </div>
+    <script src="/public/js/profile.js"></script>
   </body>
 </html>
