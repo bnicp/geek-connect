@@ -18,7 +18,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    usertag: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -37,14 +37,14 @@ User.init(
         len: [8],
       },
     },
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        isNumeric: true,
-        // add restriction on age
-      }
-    },
+    // age: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   validate: {
+    //     isNumeric: true,
+    //     // add restriction on age
+    //   }
+    // },
     // work on entering interest in which fantasy world
   },
   {
