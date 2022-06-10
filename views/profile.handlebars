@@ -21,7 +21,7 @@
           </section>
         </div>
         <section id="matched-users grid-item grid-item-3">
-          {{#each user as |user|}}
+          {{#each users as |user|}}
           <div class="card">
             <h3>{{name}}</h3>
             <div>
@@ -33,6 +33,7 @@
             <button type="button" class="like-button">like</button>
             <button type="button" class="comment-button">comment</button>
           </div>
+          {{/each}}
         </section>
       </main>
     </div>
