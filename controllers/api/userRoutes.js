@@ -6,20 +6,13 @@ router.get('/user', async (req, res) => {
   try {
     // const tagdata = Tag.hasOne(Category, { as: 'category'});
     const userData = await User.findAll({
+      attributes: ['id', 'username'],
       include: [
-        // { 
-        //   model: Category, attributes: ['category_name', 'id']
-        // }, 
         { 
-          model: Tag, attributes: ['tag_name', 'id', 'category_id']
-        }
-        // {
-        //   association: tagdata, as: 'category'
-        // }
-        // {
-        //   model: Category, attributes: ['category_name', 'id']
-        // }
+          model: Tag, attributes: ['tag_name', 'id'], include: [{model: Category}]
+        },
       ]
+    
     });
     res.status(200).json(userData);
   } catch (err) {
