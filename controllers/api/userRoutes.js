@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Category, Tag, UserTag } = require('../../models');
 
 // get all users
-router.get('/user', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // const tagdata = Tag.hasOne(Category, { as: 'category'});
     const userData = await User.findAll({
@@ -14,33 +14,38 @@ router.get('/user', async (req, res) => {
       ]
     
     });
-    res.status(200).json(userData);
+    res.render('profile');
   } catch (err) {
     res.status(500).json(err);
   }
+
+  //   res.status(200).json(userData);
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 
 
-router.get('/', async (req, res) => {
-  // find all products
-  // be sure to include its associated Category and Tag data
-  try {
-    const productData = await Product.findAll({
-      include: [
-        { 
-          model: UserTag
-        } 
-        // { 
-        //   model: Tag, attributes: ['tag_name', 'id']
-        // }
-      ]}
-    );
-    res.status(200).json(productData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/', async (req, res) => {
+//   // find all products
+//   // be sure to include its associated Category and Tag data
+//   try {
+//     const productData = await Product.findAll({
+//       include: [
+//         { 
+//           model: UserTag
+//         } 
+//         // { 
+//         //   model: Tag, attributes: ['tag_name', 'id']
+//         // }
+//       ]}
+//     );
+//     res.status(200).json(productData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 // takes user to create account
