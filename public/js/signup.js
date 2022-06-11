@@ -13,12 +13,12 @@ const signupFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      // if (response.ok) {
-      //   // document.location.replace('/profile');
-      //   console.log("Okay")
-      // } else {
-      //   alert("Nope");
-      // }
+      if (response.ok) {
+        document.location.replace('/profile');
+        console.log("Okay")
+      } else {
+        alert("Nope");
+      }
     }
   };
 
