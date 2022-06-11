@@ -3,7 +3,7 @@
 class="w3-button" id="modalBtn">Login<button>
 
 <!-- The Modal -->
-<div id="id01" class="w3-modal">
+<div id="id01" class="w3-modal modalx">
   <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('id01').style.display='none'"
@@ -14,7 +14,7 @@ class="w3-button" id="modalBtn">Login<button>
           <input type="text" id="email" name="username" />
           <label for="password">Password: </label>
           <input type="text" id="password" name="password" />
-           <input type="submit" id="loginbtn" value="Login" /><br /><br />
+           <input type="submit" id="loginBtn" value="Login" /><br /><br />
         </form> <br><br>
         <div class="smallPrint">Don't have a login? | Register New Account</a>
           <!-- <br>Forgot your password? | Reset -->
@@ -27,7 +27,7 @@ class="w3-button" id="modalBtn">Login<button>
 class="w3-button" id="signupBtn">Sign Up<button>
 
 <!-- The Modal -->
-<div id="id02" class="w3-modal">
+<div id="id02" class="w3-modal modalx">
   <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('id02').style.display='none'"
@@ -122,3 +122,5 @@ class="w3-button" id="signupBtn">Sign Up<button>
         <p>Sign up today to find your tribe.</p>
       </div>
     </div>
+
+    <script src="/js/login.js"></script>
