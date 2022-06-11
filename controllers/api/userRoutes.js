@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   try {
     // const tagdata = Tag.hasOne(Category, { as: 'category'});
     const userData = await User.findAll({
-      attributes: ['id', 'username'],
+      attributes: ['id', 'username', 'password'],
       include: [
         { 
           model: Tag, attributes: ['tag_name', 'id'], include: [{model: Category}]
@@ -14,15 +14,15 @@ router.get('/', async (req, res) => {
       ]
     
     });
-    res.render('profile');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-
-  //   res.status(200).json(userData);
+  //   res.render('profile');
   // } catch (err) {
   //   res.status(500).json(err);
   // }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 
@@ -52,13 +52,14 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
+    res.status(200).json(userData);
+    
+    // req.session.save(() => {
+    //   req.session.user_id = userData.id;
+    //   req.session.logged_in = true;
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
-    });
+    //   res.status(200).json(userData);
+    // });
   } catch (err) {
     res.status(400).json(err);
   }
