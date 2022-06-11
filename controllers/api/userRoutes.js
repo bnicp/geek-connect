@@ -1,15 +1,51 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Category, Tag, UserTag } = require('../../models');
 
 // get all users
-router.get('/user', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll();
-    res.status(200).json(userData);
+    // const tagdata = Tag.hasOne(Category, { as: 'category'});
+    const userData = await User.findAll({
+      attributes: ['id', 'username'],
+      include: [
+        { 
+          model: Tag, attributes: ['tag_name', 'id'], include: [{model: Category}]
+        },
+      ]
+    
+    });
+    res.render('profile');
   } catch (err) {
     res.status(500).json(err);
   }
+
+  //   res.status(200).json(userData);
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
+
+
+
+// router.get('/', async (req, res) => {
+//   // find all products
+//   // be sure to include its associated Category and Tag data
+//   try {
+//     const productData = await Product.findAll({
+//       include: [
+//         { 
+//           model: UserTag
+//         } 
+//         // { 
+//         //   model: Tag, attributes: ['tag_name', 'id']
+//         // }
+//       ]}
+//     );
+//     res.status(200).json(productData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 // takes user to create account
@@ -23,6 +59,15 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(userData);
     });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/usertag', async (req, res) => {
+  try { 
+    const user_tag = UserTag.create(req.body);
+    res.status(200).json(user_tag)
   } catch (err) {
     res.status(400).json(err);
   }
