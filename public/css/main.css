@@ -101,6 +101,20 @@ footer {
   margin: 2rem;
 }
 
+#modalBtn,
+#signupBtn {
+  position: absolute;
+  right: 9rem;
+  top: 3rem;
+  background-color: white;
+}
+
+#signupBtn {
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+}
+
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
