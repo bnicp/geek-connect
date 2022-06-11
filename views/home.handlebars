@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geek Connect</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+  <body>
+    <header><img src="./images/dragon.svg" id="dragon"><h1>Geek Connect</h1>
+    </header>
         <!-- Trigger/Open the Modal -->
 <button onclick="document.getElementById('id01').style.display='block'"
 class="w3-button" id="modalBtn">Login<button>
@@ -71,67 +86,58 @@ class="w3-button" id="signupBtn">Sign Up<button>
           <input type="submit" value="Next" id="submitNewAccount" />
         </form>
       </div>
-      </div>
-      </div>
-</div>
-      {{!-- <div class="section" id="fandoms">
-  <div id="login">
-    <p>LOGIN</p><br />
-    <form id="login-form">
-      <label for="username">Email: </label>
-      <input type="text" id="email-login" name="username" />
-      <label for="password">Password: </label>
-      <input type="text" id="password-login" name="password" /><br /><br />
-       <input type="submit" id="login" value="Submit" /><br /><br />
-    </form>
-    <div class="smallPrint">Don't have a login? |
-      <a href="signup" TO SIGNUP HANDLEBARS>Register New Account</a>
-      <br />Forgot your password? | Reset
-    </div>
-  </div><hr /> --}}
-  <div class="section" id="fandoms">
-    <div>
-    <br /><p>Find your new favorite people based on common worlds!</p><br />
-  </div>
-</div>
-<div class="section">
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <img
-          src="/images/star_wars_logo.jpg"
-          alt="Avatar"
-          style="width:100%"
-        />
-        <h4><b>Star Wars</b></h4>
-        <p>Find your faction</p>
+
+    <div class="section" id="fandoms">
+      <!-- <div id="login">
+        <form id="login-form">
+          <label for="username">Email: </label>
+          <input type="text" id="email" name="username" />
+          <label for="password">Password: </label>
+          <input type="text" id="password" name="password" />
+           <input type="submit" id="loginbtn" value="Login" /><br /><br />
+        </form> -->
+
       </div>
     </div>
-    <div class="column">
+      </div><hr>
+      <div>
+        <br><p>Find your new favorite people based on common worlds!</p><br>
+      </div>
+    </div>
+    <div class="section">
+      <div class ="row">
+      <div class="column">
       <div class="card">
-        <img src="/images/got_logo.jpeg" alt="Avatar" style="width:100%" />
+        <img src="./images/star_wars_logo.jpg" alt="Avatar" style="width:100%">
+          <h4><b>Star Wars</b></h4>
+          <p>Find your faction</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+        <img src="./images/got_logo.jpeg" alt="Avatar" style="width:100%">
         <div>
           <h4><b>Game of Thrones</b></h4>
-          <p>Choose your favorite house</p>
+          <p>Choose your allegiance</p>
+        </div>
         </div>
       </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <img
-          src="/images/hogwarts-house-crest.png"
-          alt="Avatar"
-          style="width:100%"
-        />
+      <div class="column">
+        <div class="card">
+        <img src="./images/hogwarts-house-crest.png" alt="Avatar" style="width:100%">
         <div>
           <h4><b>Harry Potter</b></h4>
-          <p>Where do you belong?</p>
+          <p>Choose your house</p>
+        </div>
         </div>
       </div>
+      </div>
+      <div class="home-descript">
+        <p>Add friends and chat about the worlds you love.</p>
+        <p>Sign up today to find your tribe.</p>
+      </div>
     </div>
-  </div>
-  <div class="home-descript">
-    <p>Add friends and chat about the worlds you love.</p>
-    <p>Sign up today to find your tribe.</p>
-  </div>
-</div>
+    <footer>Created by Tori Hendricks, Chris Ginn, Mac Schmitz, and Brandi Peters</footer>
+  </body>
+  <script src="./login.js"></script>
+</html>
