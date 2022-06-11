@@ -2,6 +2,7 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
+  box-sizing: border-box;
 }
 
 :root {
@@ -73,6 +74,35 @@ footer {
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flexcard {
+  width: 25%;
+  margin: 1rem;
+}
+
+.explore-header {
+  width: 50%;
+  padding: 3%;
+}
+
+.explore-image {
+  width: 50%;
+  padding: 3%;
+}
+
+.avatar-image {
+  width: 30%;
+}
+
+.tag-icon {
+  width: 10%;
 }
 
 .row {
