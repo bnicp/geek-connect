@@ -145,6 +145,16 @@ footer {
   top: 3rem;
 }
 
+#slider {
+  width: 100%;
+  /* margin-bottom: 50px; */
+}
+
+.myslides {
+  width: 100%;
+  height: auto;
+}
+
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
