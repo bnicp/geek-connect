@@ -33,14 +33,14 @@ var modal1 = document.getElementById("id01");
 var modal2 = document.getElementById("id02");
 
 // Get the button that opens the modal
-var btn = document.getElementById("loginBtn");
+var btn = document.getElementById("login");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
-  modal.style.display = "block";
+  modal1.style.display = "block";
 }
 
 // // When the user clicks on <span> (x), close the modal
