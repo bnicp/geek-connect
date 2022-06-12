@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   try {
     // const tagdata = Tag.hasOne(Category, { as: 'category'});
     const userData = await User.findAll({
-      attributes: ['id', 'username', 'password'],
+      attributes: ['id', 'username', 'email'],
       include: [
         { 
           model: Tag, attributes: ['tag_name', 'id'], include: [{model: Category}]
