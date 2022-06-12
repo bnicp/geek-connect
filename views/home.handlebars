@@ -32,19 +32,19 @@ class="w3-button" id="signupBtn">Sign Up<button>
     <div class="w3-container">
       <span onclick="document.getElementById('id02').style.display='none'"
       class="w3-button w3-display-topright">&times;</span><br><br>
-      <div id="signupForm">
+      <div id="signup-form">
         <form>
-          <label for="fname">First name:</label><br />
+          {{!-- <label for="fname">First name:</label><br />
           <input type="text" id="fname" name="fname" /><br />
           <label for="lname">Last name:</label><br />
-          <input type="text" id="lname" name="lname" /><br />
+          <input type="text" id="lname" name="lname" /><br /> --}}
           <label for="email">E-mail Address:</label><br />
-          <input type="text" id="email" name="email" /><br /><br />
+          <input type="text" id="email_signup" name="email" /><br /><br />
           <label for="username">Username:</label><br />
-          <input type="text" id="username" name="username" /><br />
+          <input type="text" id="username_signup" name="username" /><br />
           <label for="password">Password:</label><br />
-          <input type="text" id="password" name="password" /><br />
-          <label for="password2">Re-enter Password:</label><br />
+          <input type="text" id="password_signup" name="password" /><br />
+          {{!-- <label for="password2">Re-enter Password:</label><br />
           <input type="text" id="password2" name="password2" /><br /><br />
           <input type="checkbox" id="age" name="age" value="age" /><label
             for="StarWars"
@@ -67,8 +67,8 @@ class="w3-button" id="signupBtn">Sign Up<button>
             name="harryPotter"
             value="Boat"
           />
-          <label for="harryPotter"> Harry Potter</label><br /><br />
-          <input type="submit" value="Next" id="submitNewAccount" />
+          <label for="harryPotter"> Harry Potter</label><br /><br /> --}}
+          <input type="submit" value="Next" id="submit" />
         </form>
       </div>
 
@@ -124,3 +124,4 @@ class="w3-button" id="signupBtn">Sign Up<button>
     </div>
 
     <script src="/js/login.js"></script>
+    <script src="/js/signup.js"></script>
