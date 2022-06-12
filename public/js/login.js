@@ -26,7 +26,7 @@ const loginFormHandler = async (event) => {
 
   document
   .querySelector('#login-form')
-  .addEventListener('login', loginFormHandler);
+  .addEventListener('submit', loginFormHandler);
 
   // Get the modal
 var modal1 = document.getElementById("id01");
