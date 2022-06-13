@@ -19,7 +19,9 @@ a:active {
   color: var(--white);
 } */
 
-header {
+header,
+.about,
+.home-descript {
   margin-bottom: 1rem;
   padding: 2rem;
 }
@@ -134,9 +136,13 @@ footer {
   top: 3rem;
 }
 
-.home-descript {
+/* .about {
+  margin-bottom: 2rem;
+} */
+
+/* .home-descript {
   margin: 2rem;
-}
+} */
 
 #modalBtn,
 #signupBtn {
@@ -173,5 +179,11 @@ footer {
     width: 100%;
     display: block;
     margin-bottom: 20px;
+  }
+  /* .about {
+    text-align: left;
+  } */
+  .mySlides {
+    max-width: 90%;
   }
 }
