@@ -20,19 +20,28 @@ a:active {
 } */
 
 header,
+.about,
+.home-descript {
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+header,
 footer {
   background-color: var(--blue);
   color: var(--white);
   height: 5rem;
   text-align: center;
-  padding: 3rem;
-  margin-bottom: 2rem;
   min-height: 7rem;
   position: relative;
 }
 
 footer {
   padding-top: 2rem;
+  /* position: fixed;
+  left: 0;
+  bottom: 0; */
+  width: 100%;
 }
 
 .column {
@@ -127,9 +136,13 @@ footer {
   top: 3rem;
 }
 
-.home-descript {
+/* .about {
+  margin-bottom: 2rem;
+} */
+
+/* .home-descript {
   margin: 2rem;
-}
+} */
 
 #modalBtn,
 #signupBtn {
@@ -145,11 +158,32 @@ footer {
   top: 3rem;
 }
 
+#Demo1,
+#Demo2,
+#Demo3 {
+  margin-left: 40%;
+}
+
+.background {
+  background-color: rgb(227, 227, 227);
+}
+
+.mySlides {
+  max-width: 50%;
+  margin-left: 5%;
+}
+
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
     display: block;
     margin-bottom: 20px;
+  }
+  /* .about {
+    text-align: left;
+  } */
+  .mySlides {
+    max-width: 90%;
   }
 }

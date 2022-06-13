@@ -1,127 +1,72 @@
- <!-- Trigger/Open the Modal -->
-<button onclick="document.getElementById('id01').style.display='block'"
-class="w3-button" id="modalBtn">Login<button>
+<!-- Trigger/Open the Modal -->
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button" id="modalBtn">Login</button>
 
 <!-- The Modal -->
 <div id="id01" class="w3-modal modalx">
   <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('id01').style.display='none'"
-      class="w3-button w3-display-topright">&times;</span><br><br>
+        class="w3-button w3-display-topright">&times;</span><br><br>
       <div id="login-form">
         <form>
           <label for="email">Email: </label>
           <input type="text" id="email-login" name="email" />
           <label for="password">Password: </label>
           <input type="text" id="password-login" name="password" />
-           <input type="submit" id="login" value="Login" /><br /><br />
-        </form> <br><br>
+          <input type="submit" id="login" value="Login" /><br /><br />
+        </form>
         <div class="smallPrint">Don't have a login? | Register New Account</a>
           <!-- <br>Forgot your password? | Reset -->
         </div>
+      </div>
     </div>
   </div>
 </div>
 <!-- Trigger/Open the Modal -->
-<button onclick="document.getElementById('id02').style.display='block'"
-class="w3-button" id="signupBtn">Sign Up<button>
+<button onclick="document.getElementById('id02').style.display='block'" class="w3-button" id="signupBtn">Sign
+  Up</button>
 
 <!-- The Modal -->
 <div id="id02" class="w3-modal modalx">
   <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('id02').style.display='none'"
-      class="w3-button w3-display-topright">&times;</span><br><br>
+        class="w3-button w3-display-topright">&times;</span><br><br>
       <div id="signup-form">
         <form>
-          {{!-- <label for="fname">First name:</label><br />
-          <input type="text" id="fname" name="fname" /><br />
-          <label for="lname">Last name:</label><br />
-          <input type="text" id="lname" name="lname" /><br /> --}}
           <label for="email">E-mail Address:</label><br />
           <input type="text" id="email_signup" name="email" /><br /><br />
           <label for="username">Username:</label><br />
           <input type="text" id="username_signup" name="username" /><br />
           <label for="password">Password:</label><br />
-          <input type="text" id="password_signup" name="password" /><br />
-          {{!-- <label for="password2">Re-enter Password:</label><br />
-          <input type="text" id="password2" name="password2" /><br /><br />
-          <input type="checkbox" id="age" name="age" value="age" /><label
-            for="StarWars"
-          >
-            I certify I am 18 or older.</label
-          ><br /><br />
-          <p>Select the fandoms you're interested in:</p>
-          <input
-            type="checkbox"
-            id="StarWars"
-            name="StarWars"
-            value="StarWars"
-          />
-          <label for="StarWars"> Star Wars</label><br />
-          <input type="checkbox" id="GoT" name="GoT" value="GoT" />
-          <label for="GoT"> Game of Thrones</label><br />
-          <input
-            type="checkbox"
-            id="harryPotter"
-            name="harryPotter"
-            value="Boat"
-          />
-          <label for="harryPotter"> Harry Potter</label><br /><br /> --}}
-          <input type="submit" value="Next" id="submit" />
+          <input type="text" id="password_signup" name="password" /><br /><br>
+          <input type="submit" value="Create Account" id="submit" /><br><br><br>
         </form>
       </div>
-
-    <div class="section" id="fandoms">
-      <!-- <div id="login">
-        <form id="login-form">
-          <label for="username">Email: </label>
-          <input type="text" id="email" name="username" />
-          <label for="password">Password: </label>
-          <input type="text" id="password" name="password" />
-           <input type="submit" id="loginbtn" value="Login" /><br /><br />
-        </form> -->
-
-      </div>
     </div>
-      </div><hr>
-      <div>
-        <br><p>Find your new favorite people based on common worlds!</p><br>
-      </div>
-    </div>
-    <div class="section">
-      <div class ="row">
-      <div class="column">
-      <div class="card">
-        <img src="./images/star_wars_logo.jpg" alt="Avatar" style="width:100%">
-          <h4><b>Star Wars</b></h4>
-          <p>Find your faction</p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-        <img src="./images/got_logo.jpeg" alt="Avatar" style="width:100%">
-        <div>
-          <h4><b>Game of Thrones</b></h4>
-          <p>Choose your allegiance</p>
-        </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-        <img src="./images/hogwarts-house-crest.png" alt="Avatar" style="width:100%">
-        <div>
-          <h4><b>Harry Potter</b></h4>
-          <p>Choose your house</p>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="home-descript">
-        <p>Add friends and chat about the worlds you love.</p>
-        <p>Sign up today to find your tribe.</p>
-      </div>
-    </div>
+  </div>
+</div>
 
-    <script src="/js/login.js"></script>
-    <script src="/js/signup.js"></script>
+<div class="about">
+  <p>We're all introverts here! Geek Connect makes it easier to start a conversations</p>
+  <p>Find your new favorite people based on common interests in fantasy worlds.</p>
+    <p>Light sabers, swords, and wands... oh my!</p>
+</div>
+<section>
+  <div class="section" id="slider">
+    <img class="mySlides w3-animate-bottom" src="images/star_wars_logo.jpg">
+    <img class="mySlides w3-animate-bottom" src="images/got_logo.jpeg">
+    <img class="mySlides w3-animate-bottom" src="images/hogwarts-house-crest.png">
+    {{!-- <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button> --}}
+  </div>
+</section>
+
+<div class="home-descript">
+  <p>Add friends and chat about the worlds you love.</p>
+  <p>Sign up today to find your tribe.</p>
+</div>
+</div>
+
+<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>
