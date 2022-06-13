@@ -26,4 +26,12 @@ Tag.belongsToMany(User, {
   }
 })
 
+// User.hasMany(UserTag, {
+//   foreignKey: 'user_id'
+// })
+
+// UserTag.hasMany(User, {
+//   foreignKey: 'user_id'
+// })
+
 module.exports = { User, Category, Tag, UserTag };

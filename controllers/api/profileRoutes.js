@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Tag, UserTag, Category } = require('../../models');
 const withAuth = require('../../utils/auth.js');
 
 
@@ -10,7 +10,7 @@ const withAuth = require('../../utils/auth.js');
         attributes: { exclude: ['password'] },
         // include: [{ model: Project }],
       });
-  
+
       const user = userData.get({ plain: true });
   
       res.render('profile', {
@@ -24,4 +24,41 @@ const withAuth = require('../../utils/auth.js');
     }
   });
 
+
+  router.get('/test', async (req, res) => {
+    try {
+      const userData = await User.findByPk(10, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Tag, attributes: ['tag_name', 'id'], include: [{model: Category}] }],
+      });
+
+      const tagData = await Tag.findAll({
+        where: { id: userData.tags[0].id },
+        include: [{ model: User, attributes: ['username'] }],
+      })
+
+      // const users = userData.map((user) => user.get({ plain: true }));
+      const users = userData.get({ plain: true });
+      // const tags = tagData.get({ plain: true });
+      const tags = tagData.map((tag) => tag.get({ plain: true }));
+
+      // res.json(tagData);
+      // const resi = await res.json(tagData);
+      // console.log(user.tags[0].id)
+      // console.log(resi)
+      const obj = {};
+      obj['user'] = users;
+      obj['sameTags'] = tags;
+      // res.json(obj)
+
+      res.render('profile', {
+        ...obj, 
+        // ...tags
+        // logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+    }
+  )
 module.exports = router;
