@@ -11,6 +11,12 @@
   --teal: #22c9fc;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* a:link,
 a:visited,
 a:hover,
@@ -42,6 +48,8 @@ footer {
   left: 0;
   bottom: 0; */
   width: 100%;
+  flex: 0 0 50px; /*or just height:50px;*/
+  margin-top: auto;
 }
 
 .column {
@@ -161,7 +169,7 @@ footer {
 #Demo1,
 #Demo2,
 #Demo3 {
-  margin-left: 40%;
+  margin: 2rem;
 }
 
 .background {
@@ -170,43 +178,33 @@ footer {
 
 .mySlides {
   max-width: 100%;
-  /* margin-left: 5%;
-  float: right; */
 }
 
-.type-options input[type="radio"] {
+/* .type-options input[type="radio"] {
   opacity: 0;
   position: fixed;
   width: 0;
-}
+} */
 
 .type-options label {
   display: inline-block;
   background-color: #ddd;
   padding: 10px 20px;
-  font-family: sans-serif, Arial;
-  font-size: 16px;
+  /* font-size: 16px; */
   border: 2px solid var(--blue);
   border-radius: 4px;
-  width: 33%;
+  margin: 1rem 0;
   text-align: center;
 }
 
 .type-options input[type="radio"]:checked + label {
-  background-color: gray;
+  background-color: rgb(204, 44, 44);
 }
-
-/* .type-options input[type="radio"]:focus + label {
-  border: 2px dashed #444;
-} */
 
 .type-options label:hover {
   background-color: var(--teal);
+  cursor: pointer;
 }
-
-/* .myslides2 {
-  max-width: 90%;
-} */
 
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 720px) {
