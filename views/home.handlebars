@@ -9,13 +9,13 @@
         class="w3-button w3-display-topright">&times;</span><br><br>
       <div id="login-form">
         <form>
-          <label for="email">Email: </label>
-          <input type="text" id="email-login" name="email" />
-          <label for="password">Password: </label>
-          <input type="text" id="password-login" name="password" />
-          <input type="submit" id="login" value="Login" /><br /><br />
+          <label for="email">Email: </label><br>
+          <input type="text" id="email-login" name="email" /><br><br>
+          <label for="password">Password: </label><br>
+          <input type="text" id="password-login" name="password" /><br><br>
+          <input type="submit" id="login" value="Login" /><br /><br /><br>
         </form>
-        <div class="smallPrint">Don't have a login? | Register New Account</a>
+        {{!-- <div class="smallPrint">Don't have a login? | Register New Account</a> --}}
           <!-- <br>Forgot your password? | Reset -->
         </div>
       </div>
@@ -109,7 +109,11 @@
   <p>Sign up today to find your tribe.</p>
 </div>
 </div>
-
+<div class="row">
+  <div class="column2 w3-green w3-center"><p>s4</p></div>
+  <div class="column2 w3-dark-grey w3-center"><p>s4</p></div>
+  <div class="column2 w3-red w3-center"><p>s4</p></div>
+</div>
 
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>
