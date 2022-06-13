@@ -88,3 +88,18 @@ function carousel() {
   x[slideIndex-1].style.display = "block";
   setTimeout(carousel, 3000); // Change image every 3 seconds
 }
+
+var slideIndex2 = 0;
+carousel1();
+
+function carousel1() {
+  var i;
+  var y = document.getElementsByClassName("mySlides2");
+  for (i = 0; i < y.length; i++) {
+    y[i].style.display = "none";
+  }
+  slideIndex2++;
+  if (slideIndex2 > y.length) {slideIndex2 = 1}
+ y[slideIndex2-1].style.display = "block";
+  setTimeout(carousel1, 3000); // Change image every 3 seconds
+}
