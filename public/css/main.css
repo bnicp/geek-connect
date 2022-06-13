@@ -25,6 +25,12 @@ a:active {
   color: var(--white);
 } */
 
+/* header {
+  display: flex;
+  flex: 0;
+  justify-content: center;
+} */
+
 header,
 .about,
 .home-descript {
@@ -36,10 +42,9 @@ header,
 footer {
   background-color: var(--blue);
   color: var(--white);
-  height: 5rem;
   text-align: center;
   min-height: 7rem;
-  position: relative;
+  /* position: relative; */
 }
 
 footer {
@@ -144,6 +149,12 @@ footer {
   top: 3rem;
 }
 
+#gc-logo {
+  max-width: 40%;
+  position: absolute;
+  left: 30%;
+}
+
 /* .about {
   margin-bottom: 2rem;
 } */
@@ -156,14 +167,13 @@ footer {
 #signupBtn {
   position: absolute;
   right: 9rem;
-  top: 3rem;
+  top: 2rem;
   background-color: white;
 }
 
 #signupBtn {
   position: absolute;
   right: 2rem;
-  top: 3rem;
 }
 
 #Demo1,
@@ -207,6 +217,42 @@ footer {
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 990px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  /* .about {
+    text-align: left;
+  } */
+  header {
+    margin-bottom: 3rem;
+  }
+
+  .mySlides,
+  .myslides2 {
+    max-width: 90%;
+    float: none;
+    margin-left: 5%;
+  }
+
+  #modalBtn,
+  #signupBtn {
+    position: absolute;
+    top: 5rem;
+    right: none;
+    background-color: var(--teal);
+    max-height: 3rem;
+  }
+
+  #gc-logo {
+    max-width: 50%;
+    position: absolute;
+    left: 25%;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .column {
     width: 100%;
@@ -230,9 +276,15 @@ footer {
   #modalBtn,
   #signupBtn {
     position: absolute;
-    top: 7rem;
+    top: 5rem;
     right: none;
-    background-color: var(--teal);
+    /* background-color: var(--teal); */
     max-height: 3rem;
+  }
+
+  #gc-logo {
+    max-width: 60%;
+    position: absolute;
+    left: 20%;
   }
 }
