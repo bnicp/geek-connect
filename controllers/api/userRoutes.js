@@ -67,7 +67,10 @@ router.post('/', async (req, res) => {
 
 router.post('/usertag', async (req, res) => {
   try { 
-    const user_tag = UserTag.create(req.body);
+    const user_tag = UserTag.bulkCreate({
+      ...req.body,
+      user_id: req.session.user_id, 
+    });
     res.status(200).json(user_tag)
   } catch (err) {
     res.status(400).json(err);
