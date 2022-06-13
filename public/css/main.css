@@ -19,20 +19,27 @@ a:active {
   color: var(--white);
 } */
 
+header {
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
 header,
 footer {
   background-color: var(--blue);
   color: var(--white);
   height: 5rem;
   text-align: center;
-  padding: 3rem;
-  margin-bottom: 2rem;
   min-height: 7rem;
   position: relative;
 }
 
 footer {
   padding-top: 2rem;
+  /* position: fixed;
+  left: 0;
+  bottom: 0; */
+  width: 100%;
 }
 
 .column {
@@ -143,6 +150,21 @@ footer {
   position: absolute;
   right: 2rem;
   top: 3rem;
+}
+
+#Demo1,
+#Demo2,
+#Demo3 {
+  margin-left: 40%;
+}
+
+.background {
+  background-color: rgb(227, 227, 227);
+}
+
+.mySlides {
+  max-width: 50%;
+  margin-left: 5%;
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
