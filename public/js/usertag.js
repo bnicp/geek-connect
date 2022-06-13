@@ -1,15 +1,6 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
   
-    
-    // const name = document.querySelector('#name').value.trim();
-    // const email = document.querySelector('#email_signup').value.trim();
-    // const password = document.querySelector('#password_signup').value.trim();
-    // const username = document.querySelector('#username_signup').value.trim();
-    
-    // const tag_id = document.querySelector('#').value;
-    // const form = document.querySelector('#form')
-    // const test = document.querySelector('.starwars:checked').val;
     // console.log(test);
     const arr = []
 
@@ -59,13 +50,6 @@ const signupFormHandler = async (event) => {
             }
         }
 
-
-    //   const response = await fetch('/api/users/usertag', {
-    //     method: 'POST',
-    //     body: JSON.stringify({ tag_id }),
-    //     headers: { 'Content-Type': 'application/json' },
-    //   });
-  
         document.location.replace('/profile');
         console.log("Okay")
     } else {

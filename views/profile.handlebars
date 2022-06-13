@@ -1,11 +1,11 @@
-    <button id="logout">Logout</button>
+    <button id="logout">Logout</button><button id="button">Do the thing</button>
     <div class="">
       {{!-- <header class="">
         <h1>Geek Connection</h1>
       </header> --}}
       <main class="container grid-container">
         <div class="grid-item grid-item-1">
-          <h2 id="welcome">Welcome, {{username}}!</h2>
+          <h2 id="welcome">Welcome, {{user.username}}!</h2>
         </div>
         <div class="profile grid-item grid-item-2">
           <section class="card">
@@ -16,20 +16,27 @@
               width="30%"
               height="30%"
             />
-            <h3>{{username}}</h3>
-            <h3>{{category_name}}</h3>
-            <h4>{{tag_name}}</h4>
+            <h3>{{user.username}}</h3>
+            <h3>{{user.email}}</h3>
+            {{!-- {{#each user.tags as |tag|}}
+            <h3>{{tag.tag_name}}</h3>
+            {{/each}} --}}
+            
+            
+            {{!-- <h4>{{tag_name}}</h4> --}}
           </section>
         </div>
         <section id="matched-users grid-item grid-item-3">
-          {{#each users as |user|}}
+          {{#each sameTags}}
           <div class="card">
-            <h3>{{name}}</h3>
+            <h3>{{tag_name}}</h3>
+            {{#each users}}
             <div>
-              <h4>{{category_name}}</h4>
+              {{username}}
             </div>
+            {{/each}}
             <div>
-              <h5>{{tag_name}}</h5>
+              
             </div>
             <button type="button" class="like-button">like</button>
             <button type="button" class="comment-button">comment</button>
@@ -40,3 +47,4 @@
     </div>
 
     <script src="/js/logout.js"></script>
+    <script src="/js/profile.js"></script>
