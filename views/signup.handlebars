@@ -9,16 +9,16 @@
 >
   Star Wars</button>
 <div id="form">
-  <div id="Demo1" class="w3-container w3-hide type-options">
-    <form class="w3-left-align">
+  <div id="Demo1" class="w3-container w3-hide is-grouped type-options">
+    <form class="w3-center-align">
       <input class="starwars" type="radio" id="Jedi" name="SW" value="1" />
-      <label for="SW"> Jedi</label><br />
+      <label for="SW"> Jedi</label>
       <input class="starwars" type="radio" id="Sith" name="SW" value="2" />
-      <label for="SW"> Sith</label><br />
+      <label for="SW"> Sith</label>
       <input class="starwars" type="radio" id="Wookie" name="SW" value="3" />
-      <label for="SW"> Wookie</label><br />
+      <label for="SW"> Wookie</label>
       <input class="starwars" type="radio" id="Ewok" name="SW" value="4" />
-      <label for="SW"> Ewok</label><br />
+      <label for="SW"> Ewok</label>
       <input class="starwars" type="radio" id="Droid" name="SW" value="5" />
       <label for="SW"> Droid</label>
     </form><br />
@@ -29,22 +29,22 @@
   >
     Game of Thrones</button>
 
-  <div id="Demo2" class="w3-container w3-hide type-options">
-    <form class="w3-left-align">
+  <div id="Demo2" class="w3-container w3-hide is-grouped type-options">
+    <form class="w3-center-align">
       <input type="radio" id="Stark" name="GoT" value="6" />
-      <label for="GoT"> House Stark</label><br />
+      <label for="GoT">Stark</label>
       <input type="radio" id="Targaryen" name="GoT" value="8" />
-      <label for="GoT"> House Targaryen</label><br />
+      <label for="GoT">Targaryen</label>
       <input type="radio" id="Lannister" name="GoT" value="7" />
-      <label for="GoT"> House Lannister</label><br />
+      <label for="GoT">Lannister</label>
       <input type="radio" id="Greyjoy" name="GoT" value="9" />
-      <label for="GoT"> House Greyjoy</label><br />
+      <label for="GoT">Greyjoy</label>
       <input type="radio" id="Tyrell" name="GoT" value="11" />
-      <label for="GoT"> House Tyrell</label><br />
+      <label for="GoT">Tyrell</label>
       <input type="radio" id="Baratheon" name="GoT" value="12" />
-      <label for="GoT"> House Baratheon</label><br />
+      <label for="GoT">Baratheon</label>
       <input type="radio" id="Dorne" name="GoT" value="10" />
-      <label for="GoT"> House Dorne</label>
+      <label for="GoT">Dorne</label>
     </form><br />
   </div>
   <button
@@ -53,17 +53,18 @@
   >
     Harry Potter</button>
 
-  <div id="Demo3" class="w3-container w3-hide type-options">
-    <form class="w3-left-align">
-      <input type="radio" id="Gryffindor" name="HP" value="13" />
-      <label for="HP"> Gryffindor</label><br />
-      <input type="radio" id="Ravenclaw" name="HP" value="15" />
-      <label for="HP"> Ravenclaw</label><br />
-      <input type="radio" id="Hufflepuff" name="HP" value="14" />
-      <label for="HP"> Hufflepuff</label><br />
-      <input type="radio" id="Slytherin" name="HP" value="16" />
-      <label for="HP"> Slytherin</label>
-    </form><br />
+  <div id="Demo3" class="w3-container w3-hide">
+    <div class="is-grouped type-options">
+      <form class="w3-center-align">
+        <input type="radio" id="Gryffindor" name="HP" value="13" />
+        <label for="HP"> Gryffindor</label>
+        <input type="radio" id="Ravenclaw" name="HP" value="15" />
+        <label for="HP"> Ravenclaw</label>
+        <input type="radio" id="Hufflepuff" name="HP" value="14" />
+        <label for="HP"> Hufflepuff</label>
+        <input type="radio" id="Slytherin" name="HP" value="16" />
+        <label for="HP"> Slytherin</label>
+      </form></div><br />
   </div>
 
   <section>
@@ -76,8 +77,9 @@
     </form>
     <div id="errorMsg"></div>
   </div>
-</div>
+</div><br />
 
 <script src="/js/login.js"></script>
-{{! <script src="/js/signup.js"></script> }}
+{{!
+<script src="/js/signup.js"></script> }}
 <script src="/js/usertag.js"></script>
