@@ -11,7 +11,9 @@ const tagData = [
     },
     {
         tag_name:"Wookiee",
-        category_id:1
+        img_filename_model_update
+        category_id:1,
+        filename: "/images/SW_factions/wookie.png"
     },
     {
         tag_name:"Ewok",
@@ -39,6 +41,14 @@ const tagData = [
     },
     {
         tag_name:"House Dorne",
+        category_id:2
+    },
+    {
+        tag_name:"House Tyrell",
+        category_id:2
+    },
+    {
+        tag_name:"House Baratheon",
         category_id:2
     },
     {
