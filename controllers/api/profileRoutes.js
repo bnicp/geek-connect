@@ -28,7 +28,7 @@ const withAuth = require('../../utils/auth.js');
 
   router.get('/test', async (req, res) => {
     try {
-      const userData = await User.findByPk(10, {
+      const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: Tag, attributes: ['tag_name', 'id'], include: [{model: Category}] }],
       });
@@ -41,14 +41,14 @@ const withAuth = require('../../utils/auth.js');
           include: [{ model: User, attributes: ['username']}]
         })
         const userblah= usertag.map((user) => user.get({ plain: true}));
-        // const filterUsers = [];
+        const filterUsers = [];
         for (let i=0; i < userblah[0].users.length; i++) {
           if (userblah[0].users[i].username !== userData.username) {
-            tagData.push(userblah[0].users[i])
+            filterUsers.push(userblah[0].users[i])
           }
         }
-        
-        // tagData.push(filterUsers);
+        userblah[0].users = filterUsers
+        tagData.push(userblah);
       }
 
       // const usertag = await Tag.findAll({
@@ -57,7 +57,7 @@ const withAuth = require('../../utils/auth.js');
       // })
       
       // const userblah= usertag.map((user) => user.get({ plain: true}));
-      // res.json(userblah[0].users[1].username)
+      // res.json(userblah[0])
       // console.log(userblah[0].users.length)
 
       // res.json(tagData)
