@@ -10,7 +10,7 @@ const tagData = [
         category_id:1
     },
     {
-        tag_name:"Wookie",
+        tag_name:"Wookiee",
         category_id:1
     },
     {
