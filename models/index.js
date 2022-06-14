@@ -1,7 +1,9 @@
 const User = require('./User');
 const Category = require('./Category');
 const Tag = require('./Tag');
-const UserTag = require('./UserTag')
+const UserTag = require('./UserTag');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
 Tag.belongsTo(Category, {
   foreignKey: 'category_id'
@@ -26,12 +28,33 @@ Tag.belongsToMany(User, {
   }
 })
 
-// User.hasMany(UserTag, {
-//   foreignKey: 'user_id'
-// })
+User.hasMany(Post, {
+  foreignKey: 'userId'
+})
 
-// UserTag.hasMany(User, {
-//   foreignKey: 'user_id'
-// })
+User.hasMany(Comment, {
+  foreignKey: 'userId'
+})
 
-module.exports = { User, Category, Tag, UserTag };
+Post.hasMany(Comment, {
+  foreignKey: 'userId'
+})
+
+Post.belongsTo(User, {
+  foreignKey: 'userId'
+})
+
+Comment.belongsTo(User, {
+  foreignKey: 'userId'
+})
+
+Tag.hasMany(Post, {
+  foreignKey: 'tagId'
+})
+
+Post.belongsTo(Tag, {
+  foreignKey: 'tagId'
+})
+
+
+module.exports = { User, Category, Tag, UserTag, Post, Comment };
