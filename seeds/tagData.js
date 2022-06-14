@@ -11,6 +11,7 @@ const tagData = [
     },
     {
         tag_name:"Wookiee",
+        img_filename_model_update
         category_id:1,
         filename: "/images/SW_factions/wookie.png"
     },
