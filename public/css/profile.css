@@ -1,17 +1,39 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 33% auto;
+  grid-template-columns: 20% auto;
   grid-gap: 5%;
 }
 
 .grid-item-1 {
   grid-column-start: 1;
   grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.profile {
+  position: fixed;
+  padding-top: 22%;
+  padding-bottom: 40%;
+  width: 20%;
+  height: 100vh;
+  grid-row-start: 2;
 }
 
 #welcome {
   font-size: 2.5rem;
   padding: 5%;
+}
+
+#same-tags {
+  grid-column-start: 2;
+}
+
+#logout {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  background-color: white;
 }
 
 h2 {

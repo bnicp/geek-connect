@@ -1,23 +1,24 @@
-    <button id="logout">Logout</button><button id="button">Do the thing</button>
+    <button id="logout" class="w3-button w3-display-topright">Logout</button>
     <div class="">
       {{!-- <header class="">
         <h1>Geek Connection</h1>
       </header> --}}
       <main class="container grid-container">
-        <div class="grid-item grid-item-1">
+        <div class="grid-item-1">
           <h2 id="welcome">Welcome, {{user.username}}!</h2>
         </div>
-        <div class="profile grid-item grid-item-2">
+        <div class="profile ">
           <section class="card">
             <h2>Profile</h2>
+            <h3>{{user.username}}</h3>
             <img
               src="/images/dragon.svg"
               alt="profile avatar"
               width="30%"
               height="30%"
             />
-            <h3>{{user.username}}</h3>
-            <h3>{{user.email}}</h3>
+            <h3>{{user.tags.0.category.category_name}}</h3>
+            <h3>{{user.tags.0.tag_name}}</h3>
             {{!-- {{#each user.tags as |tag|}}
             <h3>{{tag.tag_name}}</h3>
             {{/each}} --}}
@@ -26,12 +27,12 @@
             {{!-- <h4>{{tag_name}}</h4> --}}
           </section>
         </div>
-        <section id="matched-users grid-item grid-item-3">
+        <section id="same-tags">
           {{#each sameTags}}
           <div class="card">
             <h2>{{0.category.category_name}}</h2>
             <h3>{{0.tag_name}}</h3>
-            <img src="{{0.filename}}" height="10%" />
+            <img src="{{0.filename}}" alt="{{filename}}" height="75vh" />
             {{#each 0.users}}
             <div>
               {{username}}
