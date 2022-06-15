@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 20% auto;
-  grid-gap: 5%;
+  grid-gap: 30px;
 }
 
 .grid-item-1 {
@@ -13,16 +13,67 @@
 
 .profile {
   position: fixed;
-  padding-top: 22%;
+  padding-top: 15%;
   padding-bottom: 40%;
   width: 20%;
   height: 100vh;
   grid-row-start: 2;
 }
 
+.profile-card {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(17,17,33,1) 56%, rgba(129,127,150,1) 72%, rgba(72,90,94,1) 100%);
+  color: var(--white);
+  border: .3rem solid #fff;
+}
+
+.profile-card h3 {
+  padding: 0;
+}
+
+.profile-card h4 {
+  padding: 0;
+}
+
+.same-tag-cards {
+  background: rgb(0,0,0);
+  background: linear-gradient(220deg, rgba(0,0,0,1) 0%, rgba(17,17,33,1) 37%, rgba(129,127,150,1) 65%, rgba(70,90,94,1) 100%);
+  color: var(--white);
+  border: .3rem solid #fff;
+  padding: 30px;
+  margin: 30px;
+}
+
+.same-tag-cards h4 {
+  font-size: 1rem;
+  font-weight:700;
+  padding: 0;
+}
+
+.Harry {
+  font-family: "Harry Potter", sans-serif;
+  line-height: 5rem;
+  /* padding-top: 3%; */
+}
+
+.Star {
+  font-family: "SF Distant Galaxy", sans-serif;
+  line-height: 3rem;
+  font-size: 3rem;
+  padding-top: 10%;
+}
+
+.Game {
+  font-family: "Game of Thrones", sans-serif;
+  line-height: 4rem;
+  padding-top: 3%;
+}
+
 #welcome {
   font-size: 2.5rem;
-  padding: 5%;
+  font-weight: 900;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-decoration: none;
 }
 
 #same-tags {
@@ -36,6 +87,26 @@
   background-color: white;
 }
 
+#update-btn {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.bouncy{
+  animation:bouncy 5s infinite linear;
+  position:relative;
+  }
+
 h2 {
   font-size: 2rem;
   padding: 3%;
@@ -46,6 +117,8 @@ h3 {
   font-size: 1.5rem;
   padding: 2%;
 }
+
+
 
 h4 {
   font-size: 1rem;
