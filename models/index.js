@@ -37,7 +37,7 @@ User.hasMany(Comment, {
 })
 
 Post.hasMany(Comment, {
-  foreignKey: 'userId'
+  foreignKey: 'postId'
 })
 
 Post.belongsTo(User, {
@@ -54,6 +54,10 @@ Tag.hasMany(Post, {
 
 Post.belongsTo(Tag, {
   foreignKey: 'tagId'
+})
+
+Comment.hasOne(Post, {
+  foreignKey: 'postId'
 })
 
 
