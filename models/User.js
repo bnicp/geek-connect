@@ -25,10 +25,12 @@ User.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      // unique: true,
       validate: {
         isEmail: true,
       },
+    
+      
     },
     password: {
       type: DataTypes.STRING,
@@ -37,6 +39,7 @@ User.init(
         len: [8],
       },
     },
+    // indexes: {unique: true}
     // age: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
@@ -58,11 +61,14 @@ User.init(
         return updatedUserData;
       },
     },
+    
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
+    // paranoid: true,
+    indexes: [{ unique: true, fields: [ 'email'] }]
   }
 );
 

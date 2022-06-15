@@ -35,6 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+// sequelize.define('user', {email: Sequelize.STRING}, {indexes:[{unique:true, fields: ['email']}]});
+
+sequelize.sync({  force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening at PORT 3001'));
 });
