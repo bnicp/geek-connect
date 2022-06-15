@@ -15,12 +15,10 @@
           <input type="text" id="password-login" name="password" /><br><br>
           <input type="submit" id="login" value="Login" /><br /><br /><br>
         </form>
-        {{!-- <div class="smallPrint">Don't have a login? | Register New Account</a> --}}
-          <!-- <br>Forgot your password? | Reset -->
-        </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 <!-- Trigger/Open the Modal -->
 <button onclick="document.getElementById('id02').style.display='block'" class="w3-button" id="signupBtn">Sign
@@ -51,20 +49,20 @@
   <p>We're all introverts here! Geek Connect makes it easier to start a conversation.</p>
   <p>Find your new favorite people based on common interests in fantasy worlds.</p>
 </div>
+
 <section>
-  <div class="w3-row background" id="slider">
+  {{!-- <div class="w3-row background" id="slider">
     <div class="w3-col s12 m6 l6">
       <img class="mySlides" src="images/star_wars_logo.jpg">
       <img class="mySlides" src="images/got_logo.jpeg">
       <img class="mySlides" src="images/hogwarts-house-crest.png">
-      {{!-- <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-      <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button> --}}
-    </div>
+    </div> --}}
 
-
-    <div class="w3-col s12 m6 l6">
-      <div class="mySlides2">
-        <div class="w3-container">
+    <section class="details">
+      <div class="w3-row details">
+        <div class="w3-col s12 m6 w3-center"><img class="mySlide w3-animate-zoom" alt="Star Wars logo"
+            src="images/star_wars_logo.jpg"></div>
+        <div class="w3-col s12 m6 w3-center SW">
           <h1>Find your faction</h1>
           <p>
             Jedi<br>
@@ -75,8 +73,8 @@
           </p>
         </div>
       </div>
-      <div class="mySlides2">
-        <div class="w3-container">
+      <div class="w3-row details w3-hide-small">
+        <div class="w3-col s12 m6 w3-center GoT">
           <h1>Declare your allegiance</h1>
           <p>
             House Stark<br>
@@ -88,32 +86,49 @@
             House Dorne
             <br><br><br>
           </p>
+        </div>
+        <div class="w3-col s12 m6 w3-center"><img class="mySlide w3-animate-zoom" alt="Game of Thrones logo"
+            src="images/got_logo.jpeg"></div>
       </div>
+
+      <div class="w3-row details w3-hide-medium	w3-hide-large">
+        <div class="w3-col s12 m6 w3-center"><img class="mySlide w3-animate-zoom" alt="Game of Thrones logo"
+            src="images/got_logo.jpeg"></div>
+        <div class="w3-col s12 m6 w3-center GoT">
+          <h1>Declare your allegiance</h1>
+          <p>
+            House Stark<br>
+            House Targaryen<br>
+            House Lannister<br>
+            House Greyjoy<br>
+            House Tyrell<br>
+            House Baratheon<br>
+            House Dorne
+            <br><br><br>
+          </p>
+        </div>
+
       </div>
-      <div class="mySlides2">
-        <div class="w3-container">
-          <h1>Choose your house</h1>
+
+      <div class="w3-row">
+        <div class="w3-col s12 m6 w3-center"><img class="mySlide w3-animate-zoom" alt="Harry Potter house crests"
+            src="images/hogwarts-house-crest.png"></div>
+        <div class="w3-col s12 m6 w3-center HP">
+          <h1>CHOOSE YOUR HOUSE</h1>
           <p>
             Gryffindor<br>
             Ravenclaw<br>
             Hufflepuff<br>
             Slytherin
           </p>
+        </div>
       </div>
-    </div>
-    </div>
-</section>
+    </section>
 
-<div class="home-descript">
-  <p>Add friends and chat about the worlds you love.</p>
-  <p>Sign up today to find your tribe.</p>
-</div>
-</div>
-<div class="row">
-  <div class="column2 w3-green w3-center"><p>s4</p></div>
-  <div class="column2 w3-dark-grey w3-center"><p>s4</p></div>
-  <div class="column2 w3-red w3-center"><p>s4</p></div>
-</div>
+    <div class="home-descript">
+      <p>Add friends and chat about the worlds you love.</p>
+      <p>Sign up today to find your tribe.</p>
+    </div>
 
-<script src="/js/login.js"></script>
-<script src="/js/signup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/signup.js"></script>
