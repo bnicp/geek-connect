@@ -2,19 +2,23 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../../models');
  const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+
+// GETs posts (no comments) for specific tag
+router.get('/tag=:id', async (req, res) => {
     try {
       // Get all posts and JOIN with user data
       const postData = await Post.findAll({
+        where: { tagId: req.params.id },
         include: [
           {
             model: User,
             attributes: ['username'],
           },
-          {
-              model: Comment,
+          // {
+          //     model: Comment,
+          //     include: {model: User, attributes: ['username']}
 
-          }
+          // }
         ],
       });
   
@@ -22,7 +26,7 @@ router.get('/', withAuth, async (req, res) => {
       const blogs = postData.map((post) => post.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      console.log('blogs', blogs);
+      // console.log('blogs', blogs);
     //   res.render('homepage', {
     //     blogs,
     //     logged_in: req.session.logged_in,
@@ -33,41 +37,58 @@ router.get('/', withAuth, async (req, res) => {
     }
   });
 
-
-    router.post('/', withAuth, async (req, res) => {
+// POSTs post in specific tag
+    router.post('/:id', async (req, res) => {
         try {
+          
           const newPost = await Post.create({
             ...req.body,
-            userId: res.session.user_id,
+            tagId: Number(req.params.id),
+            userId: 10,
           });
       
-          console.log('newPost', newPost);
+          // console.log('newPost', newPost);
       
           res.status(200).json(newPost);
         } catch (err) {
           res.status(400).json(err);
         }
       });
-    
-router.get('/:id', withAuth, (req, res) => {
-    Comment.findAll({
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(dbCommentData => res.json(dbCommentData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
+
+// GET specific post in specifc tag
+router.get('/tag=:tagid/:id', async (req, res) => {
+  try {
+    // Get all posts and JOIN with user data
+    const postData = await Post.findByPk(req.params.id, {
+      where: [{tagId: req.params.tagid}],
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+            model: Comment,
+            include: {model: User, attributes: ['username']}
+
+        }
+      ],
+    });
+
+  res.json(postData)
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-      router.post('/comment', withAuth, async (req, res) => {
+
+      router.post('/comment/:id', async (req, res) => {
         try {
+          const postIdparam = Number(req.params.id)
           const commentData = await Comment.create({
+            // where: {postId: req.params.id },
             ...req.body,
-            postId: 1,
-            userId: res.session.user_id,
+            postId: postIdparam,
+            userId: 10,
           });
           res.json(commentData)
         } catch (err) {
