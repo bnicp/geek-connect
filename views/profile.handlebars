@@ -1,13 +1,11 @@
 <button id="logout" class="w3-button w3-display-topright">Logout</button>
-{{! <header class="">
-  <h1>Geek Connection</h1>
-</header> }}
 
-{{!--  class="grid-container"> --}}
-  <div class="grid-item-1">
-    <h2 id="welcome">Welcome, {{user.username}}!</h2>
-  </div>
-  <div class="w3-row profile">
+<div class="grid-item-1">
+  <h2 id="welcome">Welcome, {{user.username}}!</h2>
+</div>
+<div class="w3-row">
+  <div class="w3-col m3">
+  <div class="profile">
     <div class="w3-col s12 m4 w3-center"></div>
     <section class="card profile-card">
       <h2>Profile</h2>
@@ -20,65 +18,67 @@
       <h3>{{user.tags.2.category.category_name}}</h3>
       <h4>{{user.tags.2.tag_name}}</h4>
       <button id="update-btn" class="w3-button bouncy">Update Profile</button>
-      {{!-- {{#each user.tags as |tag|}}
-      <h3>{{tag.tag_name}}</h3>
-      {{/each}} --}}
-      {{!-- <h4>{{tag_name}}</h4> --}}
+      
     </section>
   </div>
   </div>
+  <div class="w3-col m8 w3-right">
     <div id="same-tags">
-      <div class="w3-col s12 m4 w3-center">
+      <div class="w3-col">
+
         {{#each sameTags}}
-        <div class="card same-tag-cards">
-          <h2 class="{{0.category.category_name}}">{{0.category.category_name}}</h2>
-          <h3>{{0.tag_name}}</h3>
-          <img src="{{0.filename}}" alt="{{0.filename}}" height="75vh" />
-          {{!-- <h4>Users like you:</h4>
-          {{#each 0.users}}
-          <p>
-            {{username}}
-          </p>
-          {{/each}} --}}
-          {{! Make a new post modal }}
-            <button class="post_button" id="post_button" data-id="{{0.id}}">New Post</button>
+        <div class="w3-row card same-tag-cards">
+          {{!-- <div class="w3-row"> --}}
             
-            <div id="post_modal" class="w3-modal modalx font-color-black">
-              <div class="w3-modal-content">
-                <div class="w3-container">
-                  <span onclick="document.getElementById('post_modal').style.display='none'"
-                    class="w3-button w3-display-topright">&times;</span><br /><br />
-                  <div id="post-form">
-                    <h3>Create a New Post</h3><br>
-                    <form>
-                      <label for="title">Title:</label><br />
-                      <input type="text" id="post_title_create" name="title_create" style="min-width:300px;"/><br /><br />
-                      <label for="conent">Content:</label><br />
-                      <textarea for="content" id="post_content_create" style="min-height:300px; min-width:300px;"></textarea><br />
-                     <br />
+              <div class="w3-col s12 m5">
+              
+                <h2 class="{{0.category.category_name}}">{{0.category.category_name}}</h2>
+                <h3>{{0.tag_name}}</h3>
+                <img src="{{0.filename}}" alt="{{0.filename}}" height="75vh" />
+         
+                {{! Make a new post modal }}
+                <button class="post_button" id="post_button" data-id="{{0.id}}">New Post</button>
+            
+                <div id="post_modal" class="w3-modal modalx font-color-black">
+                  <div class="w3-modal-content">
+                    <div class="w3-container">
+                      <span onclick="document.getElementById('post_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span><br /><br />
+                      <div id="post-form">
+                        <h3>Create a New Post</h3><br>
+                        <form>
+                          <label for="title">Title:</label><br />
+                          <input type="text" id="post_title_create" name="title_create" style="min-width:300px;"/><br /><br />
+                          <label for="conent">Content:</label><br />
+                          <textarea for="content" id="post_content_create" style="min-height:300px; min-width:300px;"></textarea><br />
+                          <br />
+
                       
-                      <input type="submit" value="Post Now" id="submit" /><br><br><br>
-                    </form>
+                          <input type="submit" value="Post Now" id="submit" /><br><br><br>
+                        </form>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                {{!-- End od modal --}}
+
+              
               </div>
+          
+            <div class="w3-col s12 m6" style="margin-left:5%;">
+              Check out user posts:<br />
+              {{#each 0.Posts}}
+              <a href="/api/post/tag={{tagId}}/post={{id}}">{{title}}</a> by {{user.username}}
+              {{/each}}
             </div>
-
-
-        </div>
-      </div>
-      <div class="w3-col s12 m4 w3-center posts">
-        Check out user posts:<br />
-        {{#each 0.Posts}}
-        <a href="/api/post/tag={{tagId}}/{{id}}">{{title}}</a>
-        by
-        {{user.username}}
+          {{!-- </div> --}}
+          </div>
         {{/each}}
-        {{! <button type="button" class="like-button">like</button>
-        <button type="button" class="comment-button">comment</button> }}
-        {{/each}}
+        
+          
       </div>
     </div>
+  </div>
+  </div>
 
     <script src="/js/logout.js"></script>
     <script src="/js/profile.js"></script>
