@@ -1,20 +1,39 @@
-{{> post-info post}}
-
-{{#if loggedIn}}
-<div class="card">
-    <h3 class="card-header"></h3>
-    <form class="card-body comment-form" id="comment-form">
-
-        <label class="form-label">Comment</label>
-        <input id="comment" name="comment-body" class="form-input" />
-
-        <button type="submit" class="btn">Submit</button>
-    </form>
+<div class='row'>
+  <div class='card'>
+    <div class='card-header'>{{title}}</div>
+    <div class='card-body'>
+      <p class='card-text'>
+        {{content}}
+      </p>
+    </div>
+    <div class='card-footer text-muted'>
+      Posted by
+      {{user.username}}
+      on
+      {{createdAt}}
+    </div>
+  </div>
 </div>
-{{/if}}
 
-{{> comments post.comments}}
+<div class='row'>
+  <form id='comment-form'>
+    <textarea id='comment-text-area'></textarea>
+    <button id='comment-submit' data-id='{{id}}'>Submit Comment</button>
+  </form>
+</div>
 
-{{#if loggedIn}}
-<script src="/js/post.js"></script>
-{{/if}}
+{{#each comments as |comment|}}
+  <div class='row'>
+    <div class='card'>
+      <div class='card-body'>
+        <p class='card-text'>{{comment.content}}</p>
+      </div>
+      <div class='card-footer text-muted'>
+        Posted by
+        {{comment.user.username}}
+        on
+        {{comment.createdAt}}
+      </div>
+    </div>
+  </div>
+{{/each}}
