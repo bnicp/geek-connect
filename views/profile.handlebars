@@ -1,60 +1,55 @@
-    <button id="logout" class="w3-button w3-display-topright">Logout</button>
-    <div class="">
-      {{!-- <header class="">
-        <h1>Geek Connection</h1>
-      </header> --}}
-      <main class="container grid-container">
-        <div class="grid-item-1">
-          <h2 id="welcome">Welcome, {{user.username}}!</h2>
-        </div>
-        <div class="profile ">
-          <section class="card profile-card">
-            <h2>Profile</h2>
-            <h3>{{user.username}}</h3>
-            <img
-              src="/images/dragon.svg"
-              alt="profile avatar"
-              width="30%"
-              height="30%"
-            />
-            <h3>{{user.tags.0.category.category_name}}</h3>
-            <h4>{{user.tags.0.tag_name}}</h4>
-            <h3>{{user.tags.1.category.category_name}}</h3>
-            <h4>{{user.tags.1.tag_name}}</h4>
-            <h3>{{user.tags.2.category.category_name}}</h3>
-            <h4>{{user.tags.2.tag_name}}</h4>
-            <button id="update-btn" class="w3-button bouncy">Update Profile</button>
-            {{!-- {{#each user.tags as |tag|}}
-            <h3>{{tag.tag_name}}</h3>
-            {{/each}} --}}
-            
-            
-            {{!-- <h4>{{tag_name}}</h4> --}}
-          </section>
-        </div>
-        <section id="same-tags">
-          {{#each sameTags}}
-          <div class="card same-tag-cards">
-            <h2 class="{{0.category.category_name}}">{{0.category.category_name}}</h2>
-            <h3>{{0.tag_name}}</h3>
-            <img src="{{0.filename}}" alt="{{0.filename}}" height="75vh" />
-            <h4>Users like you:</h4>
-            {{#each 0.users}}
-            <div>
-              {{username}}
-            </div>
-            {{/each}}
-            <div>
-            
-            <button onclick="document.getElementById('post_modal').style.display='block'" class="" id="post_button_{{0.id}}" data-id="{{0.id}}">Make new Post</button>
+<button id="logout" class="w3-button w3-display-topright">Logout</button>
+{{! <header class="">
+  <h1>Geek Connection</h1>
+</header> }}
 
-            <div id="post_modal" class="w3-modal modalx font-color-black" data-id="{{0.id}}">
+{{!--  class="grid-container"> --}}
+  <div class="grid-item-1">
+    <h2 id="welcome">Welcome, {{user.username}}!</h2>
+  </div>
+  <div class="w3-row profile">
+    <div class="w3-col s12 m4 w3-center"></div>
+    <section class="card profile-card">
+      <h2>Profile</h2>
+      <h3>{{user.username}}</h3>
+      <img src="/images/dragon.svg" alt="profile avatar" width="30%" height="30%" />
+      <h3>{{user.tags.0.category.category_name}}</h3>
+      <h4>{{user.tags.0.tag_name}}</h4>
+      <h3>{{user.tags.1.category.category_name}}</h3>
+      <h4>{{user.tags.1.tag_name}}</h4>
+      <h3>{{user.tags.2.category.category_name}}</h3>
+      <h4>{{user.tags.2.tag_name}}</h4>
+      <button id="update-btn" class="w3-button bouncy">Update Profile</button>
+      {{!-- {{#each user.tags as |tag|}}
+      <h3>{{tag.tag_name}}</h3>
+      {{/each}} --}}
+      {{!-- <h4>{{tag_name}}</h4> --}}
+    </section>
+  </div>
+  </div>
+    <div id="same-tags">
+      <div class="w3-col s12 m4 w3-center">
+        {{#each sameTags}}
+        <div class="card same-tag-cards">
+          <h2 class="{{0.category.category_name}}">{{0.category.category_name}}</h2>
+          <h3>{{0.tag_name}}</h3>
+          <img src="{{0.filename}}" alt="{{0.filename}}" height="75vh" />
+          {{!-- <h4>Users like you:</h4>
+          {{#each 0.users}}
+          <p>
+            {{username}}
+          </p>
+          {{/each}} --}}
+          {{! Make a new post modal }}
+            <button class="post_button" id="post_button" data-id="{{0.id}}">Make new Post</button>
+            
+            <div id="post_modal" class="w3-modal modalx font-color-black">
               <div class="w3-modal-content">
                 <div class="w3-container">
                   <span onclick="document.getElementById('post_modal').style.display='none'"
-                    class="w3-button w3-display-topright">&times;</span><br><br>
+                    class="w3-button w3-display-topright">&times;</span><br /><br />
                   <div id="post-form">
-                    <form id="{{0.id}}">
+                    <form>
                       <label for="title">Title of your post or topic:</label><br />
                       <input type="text" id="post_title_create" name="title_create" /><br /><br />
                       
@@ -68,17 +63,20 @@
               </div>
             </div>
 
-            Check out user posts:<br>
-            {{#each 0.Posts}}
-            <a href="/api/post/tag={{tagId}}/{{id}}">{{title}}</a> by {{user.username}}<br>
-            {{/each}}
-            </div>
-            <button type="button" class="like-button">like</button>
-            <button type="button" class="comment-button">comment</button>
-          </div>
-          {{/each}}
-        </section>
-      </main>
+
+        </div>
+      </div>
+      <div class="w3-col s12 m4 w3-center posts">
+        Check out user posts:<br />
+        {{#each 0.Posts}}
+        <a href="/api/post/tag={{tagId}}/{{id}}">{{title}}</a>
+        by
+        {{user.username}}
+        {{/each}}
+        {{! <button type="button" class="like-button">like</button>
+        <button type="button" class="comment-button">comment</button> }}
+        {{/each}}
+      </div>
     </div>
 
     <script src="/js/logout.js"></script>
