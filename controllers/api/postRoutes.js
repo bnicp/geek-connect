@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../../models');
-// const withAuth = require('../utils/auth');
+ const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
       // Get all posts and JOIN with user data
       const postData = await Post.findAll({
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
   });
 
 
-    router.post('/', async (req, res) => {
+    router.post('/', withAuth, async (req, res) => {
         try {
           const newPost = await Post.create({
             ...req.body,
@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
         }
       });
     
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Comment.findAll({
             where: {
                 id: req.params.id
@@ -62,12 +62,12 @@ router.get('/:id', (req, res) => {
         })
 });
 
-      router.post('/comment', async (req, res) => {
+      router.post('/comment', withAuth, async (req, res) => {
         try {
           const commentData = await Comment.create({
             ...req.body,
             postId: 1,
-            userId: 13,
+            userId: res.session.user_id,
           });
           res.json(commentData)
         } catch (err) {
