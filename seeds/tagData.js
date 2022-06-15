@@ -4,7 +4,7 @@ const tagData = [
     {
         tag_name:"Jedi",
         category_id:1,
-        filename: "/images/SW_factions/jedi.jpg"
+        filename: "/images/SW_factions/jedi.png"
     },
     {
         tag_name:"Sith",
@@ -19,12 +19,12 @@ const tagData = [
     {
         tag_name:"Ewok",
         category_id:1,
-        filename: "/images/SW_factions/ewok.jpg"
+        filename: "/images/SW_factions/ewok.png"
     },
     {
         tag_name:"Drone",
         category_id:1,
-        filename: "/images/SW_factions/droid.jpg"
+        filename: "/images/SW_factions/droid.png"
     },
     {
         tag_name:"House Stark",
