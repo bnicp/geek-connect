@@ -107,6 +107,10 @@
   position:relative;
   }
 
+.font-color-black{
+  color: #000
+}
+
 h2 {
   font-size: 2rem;
   padding: 3%;
