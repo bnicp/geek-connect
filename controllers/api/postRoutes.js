@@ -57,7 +57,7 @@ router.get('/tag=:tagid', withAuth, tagAuth, async (req, res) => {
       });
 
 // GET specific post in specifc tag
-router.get('/tag=:tagid/post=:id', async (req, res) => {
+router.get('/tag=:tagid/post=:id', withAuth, async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findByPk(req.params.id, {
@@ -86,19 +86,20 @@ router.get('/tag=:tagid/post=:id', async (req, res) => {
   }
 });
 
+// Post a comment on a post/topic/discussion
+router.post('/comment/:id', async (req, res) => {
+  try {
+    const postIdparam = Number(req.params.id)
+    const commentData = await Comment.create({
+      ...req.body,
+      postId: postIdparam,
+      userId: req.session.user_id,
+    });
+    res.json(commentData)
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
-      router.post('/comment/:id', async (req, res) => {
-        try {
-          const postIdparam = Number(req.params.id)
-          const commentData = await Comment.create({
-            // where: {postId: req.params.id },
-            ...req.body,
-            postId: postIdparam,
-            userId: 10,
-          });
-          res.json(commentData)
-        } catch (err) {
-          res.status(400).json(err);
-        }
-        });
-    module.exports = router;
+
+module.exports = router;
