@@ -11,6 +11,10 @@ router.get('/', async (req, res) => {
             model: User,
             attributes: ['username'],
           },
+          {
+              model: Comment,
+
+          }
         ],
       });
   
@@ -28,37 +32,13 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
-// router.get('/post/:id', async (req, res) => {
-//     const postData = await Post.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username'],
-//         },
-//         {
-//           model: Comment,
-//           include: {
-//             model: User,
-//             attributes: ['username'],
-//           },
-//         },
-//       ],
-//     });
-  
-//     const blog = postData.get({ plain: true });
-
-//     res.render('profile', {
-//         ...blog,
-//         logged_in: true,
-//       });
-//     });
 
 
     router.post('/', async (req, res) => {
         try {
           const newPost = await Post.create({
             ...req.body,
-            userId: 13,
+            userId: res.session.user_id,
           });
       
           console.log('newPost', newPost);
@@ -69,4 +49,29 @@ router.get('/', async (req, res) => {
         }
       });
     
+router.get('/:id', (req, res) => {
+    Comment.findAll({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+});
+
+      router.post('/comment', async (req, res) => {
+        try {
+          const commentData = await Comment.create({
+            ...req.body,
+            postId: 1,
+            userId: 13,
+          });
+          res.json(commentData)
+        } catch (err) {
+          res.status(400).json(err);
+        }
+        });
     module.exports = router;
