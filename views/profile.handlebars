@@ -17,11 +17,11 @@
               width="30%"
               height="30%"
             />
-            <h3>{{user.tags.0.category.category_name}}:</h3>
+            <h3>{{user.tags.0.category.category_name}}</h3>
             <h4>{{user.tags.0.tag_name}}</h4>
-            <h3>{{user.tags.1.category.category_name}}:</h3>
+            <h3>{{user.tags.1.category.category_name}}</h3>
             <h4>{{user.tags.1.tag_name}}</h4>
-            <h3>{{user.tags.2.category.category_name}}:</h3>
+            <h3>{{user.tags.2.category.category_name}}</h3>
             <h4>{{user.tags.2.tag_name}}</h4>
             <button id="update-btn" class="w3-button bouncy">Update Profile</button>
             {{!-- {{#each user.tags as |tag|}}
@@ -46,22 +46,22 @@
             {{/each}}
             <div>
             
-            <button onclick="document.getElementById('post_modal').style.display='block'" class="" id="">Make new Post</button>
+            <button onclick="document.getElementById('post_modal').style.display='block'" class="" id="post_button_{{0.id}}" data-id="{{0.id}}">Make new Post</button>
 
-            <div id="post_modal" class="w3-modal modalx font-color-black">
+            <div id="post_modal" class="w3-modal modalx font-color-black" data-id="{{0.id}}">
               <div class="w3-modal-content">
                 <div class="w3-container">
                   <span onclick="document.getElementById('post_modal').style.display='none'"
                     class="w3-button w3-display-topright">&times;</span><br><br>
                   <div id="post-form">
-                    <form>
-                      <label for="email">E-mail Address:</label><br />
-                      <input type="text" id="email_signup" name="email" /><br /><br />
-                      <label for="username">Username:</label><br />
-                      <input type="text" id="username_signup" name="username" /><br />
-                      <label for="password">Password:</label><br />
-                      <input type="text" id="password_signup" name="password" /><br /><br>
-                      <input type="submit" value="Create Account" id="submit" /><br><br><br>
+                    <form id="{{0.id}}">
+                      <label for="title">Title of your post or topic:</label><br />
+                      <input type="text" id="post_title_create" name="title_create" /><br /><br />
+                      
+                      <label for="content">Type of the body of your topic here:</label><br />
+                      <input type="text" id="post_content_create" name="content_create" /><br />
+                      
+                      <input type="submit" value="Post to faction board" id="submit" /><br><br><br>
                     </form>
                   </div>
                 </div>
@@ -70,7 +70,7 @@
 
             Check out user posts:<br>
             {{#each 0.Posts}}
-            <a href="/api/post/tag={{tagId}}/{{id}}">{{title}}</a> by {{user.username}}
+            <a href="/api/post/tag={{tagId}}/{{id}}">{{title}}</a> by {{user.username}}<br>
             {{/each}}
             </div>
             <button type="button" class="like-button">like</button>
@@ -83,3 +83,4 @@
 
     <script src="/js/logout.js"></script>
     <script src="/js/profile.js"></script>
+    <script src="/js/post_create.js"></script>
