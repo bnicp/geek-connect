@@ -8,7 +8,7 @@
           <h2 id="welcome">Welcome, {{user.username}}!</h2>
         </div>
         <div class="profile ">
-          <section class="card">
+          <section class="card profile-card">
             <h2>Profile</h2>
             <h3>{{user.username}}</h3>
             <img
@@ -17,8 +17,13 @@
               width="30%"
               height="30%"
             />
-            <h3>{{user.tags.0.category.category_name}}</h3>
-            <h3>{{user.tags.0.tag_name}}</h3>
+            <h3>{{user.tags.0.category.category_name}}:</h3>
+            <h4>{{user.tags.0.tag_name}}</h4>
+            <h3>{{user.tags.1.category.category_name}}:</h3>
+            <h4>{{user.tags.1.tag_name}}</h4>
+            <h3>{{user.tags.2.category.category_name}}:</h3>
+            <h4>{{user.tags.2.tag_name}}</h4>
+            <button id="update-btn" class="w3-button bouncy">Update Profile</button>
             {{!-- {{#each user.tags as |tag|}}
             <h3>{{tag.tag_name}}</h3>
             {{/each}} --}}
@@ -29,10 +34,11 @@
         </div>
         <section id="same-tags">
           {{#each sameTags}}
-          <div class="card">
-            <h2>{{0.category.category_name}}</h2>
+          <div class="card same-tag-cards">
+            <h2 class="{{0.category.category_name}}">{{0.category.category_name}}</h2>
             <h3>{{0.tag_name}}</h3>
-            <img src="{{0.filename}}" alt="{{filename}}" height="75vh" />
+            <img src="{{0.filename}}" alt="{{0.filename}}" height="75vh" />
+            <h4>Users like you:</h4>
             {{#each 0.users}}
             <div>
               {{username}}
