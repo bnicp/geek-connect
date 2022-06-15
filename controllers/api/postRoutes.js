@@ -57,7 +57,7 @@ router.get('/tag=:tagid', withAuth, tagAuth, async (req, res) => {
       });
 
 // GET specific post in specifc tag
-router.get('/tag=:tagid/:id', async (req, res) => {
+router.get('/tag=:tagid/post=:id', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findByPk(req.params.id, {
@@ -75,7 +75,12 @@ router.get('/tag=:tagid/:id', async (req, res) => {
       ],
     });
 
-  res.json(postData)
+    const posts = postData.get({plain:true});
+
+    res.render('post', {
+      ...posts, logged_in: req.session.logged_in
+    });
+  // res.json(postData)
   } catch (err) {
     res.status(500).json(err);
   }
