@@ -1,10 +1,13 @@
 const newPostHandler = async (evt) => {
-    // evt.preventDefault();
-    // const title = document.querySelector('#create-post-title').value;
+    evt.preventDefault();
+    
     const content = document.querySelector('#comment-text-area').value.trim();
     const postId = evt.target.dataset.id;
-    console.log(content)
-    console.log(postId)
+    
+    if (!content) {
+      alert("nothing entered")
+    } else {
+
     await fetch(`/api/post/comment/${postId}`, {
       method: 'POST',
       body: JSON.stringify({
@@ -14,6 +17,7 @@ const newPostHandler = async (evt) => {
     });
   
     document.location.reload();
+  }
   };
   
   document
