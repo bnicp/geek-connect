@@ -1,34 +1,37 @@
-<div class='row'>
-  <div class='card'>
-    <div class='card-header'>{{title}}</div>
-    <div class='card-body'>
-      <p class='card-text'>
+<div class="row">
+  <div class="card">
+    <div class="card-header">{{title}}</div><br />
+    <div class="card-body">
+      <p class="card-text">
         {{content}}
       </p>
-    </div>
-    <div class='card-footer text-muted'>
+    </div><br /><br />
+    <div class="card-footer text-muted">
       Posted by
-      {{user.username}}
+      {{user.username}}<br />
       on
       {{createdAt}}
     </div>
   </div>
 </div>
-
-<div class='row'>
-  <form id='comment-form'>
-    <textarea id='comment-text-area'></textarea>
-    <button id='comment-submit' data-id='{{id}}'>Submit Comment</button>
+<br />
+<div class="w3-row">
+  <form id="comment-form">
+    <textarea
+      id="comment-text-area"
+      style="min-width: 400px; min-height:200px; text-align:left;"
+    ></textarea><br /><br />
+    <button id="comment-submit" data-id="{{id}}">Submit Comment</button>
   </form>
 </div>
 
 {{#each Comments as |comment|}}
-  <div class='row'>
-    <div class='card'>
-      <div class='card-body'>
-        <p class='card-text'>{{comment.content}}</p>
+  <div class="row">
+    <div class=""><br />
+      <div class="card-body"><br />
+        <p class="card-text">{{comment.content}}</p>
       </div>
-      <div class='card-footer text-muted'>
+      <div class="card-footer text-muted">
         Posted by
         {{comment.user.username}}
         on
@@ -36,6 +39,6 @@
       </div>
     </div>
   </div>
-{{/each}}
+{{/each}}<br /><br />
 
 <script src="/js/post.js"></script>
