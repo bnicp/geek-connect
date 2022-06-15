@@ -1,14 +1,33 @@
 const router = require('express').Router();
-const { Post, Comment, User } = require('../../models');
- const withAuth = require('../../utils/auth');
+const { Post, Comment, User, Tag } = require('../../models');
+const withAuth = require('../../utils/auth');
+const tagAuth = require('../../utils/tagauth')
 
 
 // GETs posts (no comments) for specific tag
-router.get('/tag=:id', async (req, res) => {
+router.get('/tag=:tagid', withAuth, tagAuth, async (req, res) => {
     try {
+    //   const userData = await User.findByPk(10, {
+    //     attributes : { exclude: ['username', 'email', 'password'] },
+    //     include : { model: Tag, attributes: ['id']}
+    // });
+
+    // const userTag = []
+    // for (let i=0; i < userData.tags.length; i++){
+    //     console.log(userData.tags[i].id);
+    //     userTag.push(userData.tags[i].id)
+    // }
+    // console.log(userTag)
+    // const tagid = Number(req.params.tagid)
+
+    // console.log(userTag.includes(tagid))
+    // if (!userTag.includes(tagid)){
+    //     res.redirect('/profile');
+        
+    // }
       // Get all posts and JOIN with user data
       const postData = await Post.findAll({
-        where: { tagId: req.params.id },
+        where: { tagId: req.params.tagid },
         include: [
           {
             model: User,

@@ -74,4 +74,32 @@ const withAuth = require('../../utils/auth.js');
     }
     }
   )
+
+
+ 
+
+
+// router.post('/', withAuth, (req, res) => {
+//   try {
+//     const commentData = await Comment.create({
+//       ...req.body,
+//       userId: 13
+
+//     });
+
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+//   });
+
+  router.get('/tagauth', async (req, res) => {
+    try{
+      const userData = await User.findByPk(10, {
+        attributes : { exclude: ['username', 'email', 'password', 'id'] },
+        include : { model: Tag, attributes: ['id']}
+    });
+    res.json(userData)
+    }catch (err) {}
+  })
+
 module.exports = router;
