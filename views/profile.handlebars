@@ -45,7 +45,33 @@
             </div>
             {{/each}}
             <div>
-              
+            
+            <button onclick="document.getElementById('post_modal').style.display='block'" class="" id="">Make new Post</button>
+
+            <div id="post_modal" class="w3-modal modalx font-color-black">
+              <div class="w3-modal-content">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('post_modal').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span><br><br>
+                  <div id="post-form">
+                    <form>
+                      <label for="email">E-mail Address:</label><br />
+                      <input type="text" id="email_signup" name="email" /><br /><br />
+                      <label for="username">Username:</label><br />
+                      <input type="text" id="username_signup" name="username" /><br />
+                      <label for="password">Password:</label><br />
+                      <input type="text" id="password_signup" name="password" /><br /><br>
+                      <input type="submit" value="Create Account" id="submit" /><br><br><br>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            Check out user posts:<br>
+            {{#each 0.Posts}}
+            <a href="/api/post/tag={{tagId}}/{{id}}">{{title}}</a> by {{user.username}}
+            {{/each}}
             </div>
             <button type="button" class="like-button">like</button>
             <button type="button" class="comment-button">comment</button>
