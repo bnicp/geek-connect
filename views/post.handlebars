@@ -10,7 +10,7 @@
       Posted by
       {{user.username}}<br />
       on
-      {{createdAt}}
+      {{format_date createdAt}} at {{format_time createdAt}}
     </div>
   </div>
 </div>
@@ -35,7 +35,7 @@
         Posted by
         {{comment.user.username}}
         on
-        {{comment.createdAt}}
+        {{format_date comment.createdAt}} at {{format_time comment.createdAt}}
       </div>
     </div>
   </div>
