@@ -15,9 +15,9 @@ const signupFormHandler = async (event) => {
   
       if (response.ok) {
         document.location.replace('/signup');
-        console.log("Okay")
+        // console.log("Okay")
       } else {
-        alert("Nope");
+        document.getElementById('errMsg2').innerHTML=`<span style="color:red"><strong>Email already registered.</strong></span>`
       }
     }
   };
