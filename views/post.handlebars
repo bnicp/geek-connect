@@ -1,32 +1,84 @@
-<div class="row">
-  <div class="card">
-    <div class="card-header">{{title}}</div><br />
-    <div class="card-body">
-      <p class="card-text">
-        {{content}}
-      </p>
-    </div><br /><br />
-    <div class="card-footer text-muted">
-      Posted by
-      {{user.username}}<br />
-      on
-      {{format_date createdAt}} at {{format_time createdAt}}
-    </div>
-  </div>
-</div>
-<br />
-<div class="w3-row">
-  <form id="comment-form">
-    <textarea
-      id="comment-text-area"
-      style="min-width: 400px; min-height:200px; text-align:left;"
-    ></textarea><br /><br />
-    <button id="comment-submit" data-id="{{id}}">Submit Comment</button>
-  </form>
+<div class="w3-display-topright">
+<button onclick="window.location.href='/'" id="profileBtn" class="w3-button">Profile</button>
+<button id="logout" class="w3-button">Logout</button>
 </div>
 
-{{#each Comments as |comment|}}
-  <div class="row">
+<div class="w3-row align-right">
+<h1>{{tag.tag_name}}</h1>
+<img src="{{tag.filename}}" height="100vh" />
+</div>
+
+<div class="w3-row">
+    <div class="w3-col w3-left m1" style="color:#fff"><p>.</p></div>
+    <div class="w3-col w3-right m1" style="color:#fff"><p>.</p></div>
+    <div class="sticky w3-col m6">
+        <div class="w3-container">
+    
+            <div class="card" style="margin-right:20px">
+                <div class="" style="background-color:#7c7c7c; color: #fff">
+                    <h2 class="left-align" style="padding:10px">{{title}}</h2>
+                </div><br />
+
+                <div class="card-body">
+                    <p class="card-text" style="text-align:left; padding-left:20px; padding-right:20px">{{content}}</p>
+                </div>
+                <br /><br />
+                {{!-- <div class="card-footer text-muted"> --}}
+                    <div class="gc-{{user.color}}" style="padding-right:10px; height:4% !important; text-align:right">
+                    Posted by {{user.username}}
+                    on {{format_date createdAt}} at {{format_time createdAt}}
+                    </div>
+
+                {{!-- </div> --}}
+            </div>
+
+            <br />
+            <hr>
+            
+            <form id="comment-form">
+                <h3 style="text-align:left;">Post a Comment below:</h3>
+                <textarea id="comment-text-area" style="min-width: 500px; min-height:200px; text-align:left;"></textarea>
+                <br /><br />
+                <button id="comment-submit" data-id="{{id}}">Submit Comment</button>
+            </form>
+        <br><br>
+        </div>
+    </div>
+
+    <div class="w3-col m4">
+        {{#if Comments}}
+        <h3 style="text-align:left;">Comments and Thoughts</h3>
+        {{#each Comments as |comment|}}
+            
+            <div class="w3-card-4" style="">
+
+                <div class="w3-row w3-container gc-{{comment.user.color}}" style="height:4%;">
+                    <div class="w3-col m7"><h3 class="left-align">{{comment.user.username}}</h3></div>
+                    <div class="w3-col m5"><span style="text-align:right; font-size:12px">{{format_date comment.createdAt}} at {{format_time comment.createdAt}}</span></div>
+                    {{!-- <span style="text-align:right;">{{format_date comment.createdAt}} at {{format_time comment.createdAt}}</span> --}}
+                </div>
+
+                <div class="w3-container m4">
+                    <p class="left-align" style="padding-bottom:10px">{{comment.content}}</p>
+                </div>
+
+            </div>
+            <hr>
+        {{/each}}
+        {{else}}
+            <div class="w3-card-4">
+                <div class="w3-row w3-container w3-red" style="height:4%;">
+                <div class="w3-col m9"><h3 class="left-align">No comments on this post yet!</h3></div>
+                </div>
+
+                <div class="w3-container m4">
+                    <p class="left-align">Be the first!</p>
+                </div>
+
+            </div>
+        {{/if}}
+
+  {{!-- <div class="row">
     <div class=""><br />
       <div class="card-body"><br />
         <p class="card-text">{{comment.content}}</p>
@@ -38,7 +90,12 @@
         {{format_date comment.createdAt}} at {{format_time comment.createdAt}}
       </div>
     </div>
-  </div>
-{{/each}}<br /><br />
+  </div> --}}
+       
+    </div>
+</div>
+<br><br>
 
+{{!-- <link rel="stylesheet" href="../public/css/post.css"> --}}
 <script src="/js/post.js"></script>
+<script src="/js/logout.js"></script>

@@ -224,6 +224,11 @@ footer {
   margin: 2rem 0;
 }
 
+.sticky{
+  position: sticky;
+  top: 0;
+}
+
 .background {
   background-color: rgb(227, 227, 227);
 }
@@ -328,5 +333,10 @@ footer {
     max-width: 60%;
     position: absolute;
     left: 20%;
+  }
+
+  .sticky{
+    position: relative;
+    top: 0;
   }
 }
