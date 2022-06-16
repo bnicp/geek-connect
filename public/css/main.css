@@ -82,6 +82,13 @@ footer {
   padding-top: 5%;
 }
 
+.SW p,
+.GoT p,
+.HP p {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
 .column {
   text-align: center;
   float: left;
@@ -224,7 +231,7 @@ footer {
   margin: 2rem 0;
 }
 
-.sticky{
+.sticky {
   position: sticky;
   top: 0;
 }
@@ -335,7 +342,7 @@ footer {
     left: 20%;
   }
 
-  .sticky{
+  .sticky {
     position: relative;
     top: 0;
   }
