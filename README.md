@@ -18,8 +18,8 @@ A site used to create connections with other geeks who enjoy Star Wars, Game of 
 
 ## Installation
 
-To run the site, visit on Heroku:
-To refer to the code, visit on Github:
+To run the site, visit on Heroku: https://geek-connect-22.herokuapp.com/
+To refer to the code, visit on Github: https://github.com/bnicp/geek-connect
 
 ## Usage
 
@@ -38,7 +38,7 @@ Mac Schmitz
 
 ## Tests
 
-Test the site at:
+Test the site at: https://geek-connect-22.herokuapp.com/
 
 ## Questions
 
