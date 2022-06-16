@@ -4,7 +4,7 @@
   <h2 id="welcome">Welcome, {{user.username}}!</h2>
 </div>
 <div class="w3-row">
-  <div class="w3-col s12 m4 w3-center">
+  <div class="sticky w3-col s12 m4 w3-center">
     <div class="profile">
       <section class="card profile-card">
         <h2>Profile</h2>
@@ -21,7 +21,6 @@
         <h4>{{user.tags.1.tag_name}}</h4>
         <h3>{{user.tags.2.category.category_name}}</h3>
         <h4>{{user.tags.2.tag_name}}</h4>
-        <button id="update-btn" class="w3-button bouncy">Update Profile</button>
 
       </section>
     </div>
@@ -31,11 +30,10 @@
       <div class="w3-col">
 
         {{#each sameTags}}
-          <div class="w3-row card same-tag-cards">
+          <div class="card-hover w3-row card same-tag-cards">
             {{! <div class="w3-row"> }}
 
             <div class="w3-col s12 m5">
-
               <h2
                 class="{{0.category.category_name}}"
               >{{0.category.category_name}}</h2>
@@ -44,7 +42,7 @@
 
               {{! Make a new post modal }}
               <button
-                class="post_button"
+                class="w3-button post_button bouncy"
                 id="post_button"
                 data-id="{{0.id}}"
               >New Post</button>
@@ -91,6 +89,7 @@
                 <a href="/api/post/tag={{tagId}}/post={{id}}">{{title}}</a>
                 by
                 {{user.username}}
+                <br>
               {{/each}}
             </div>
             {{! </div> }}
