@@ -226,7 +226,11 @@ footer {
   margin: 2rem 0;
 }
 
+<<<<<<< HEAD
 .sticky {
+=======
+.sticky{
+>>>>>>> cd899a7408e7786a6505880c8a216ff07b90da31
   position: sticky;
   top: 0;
 }
