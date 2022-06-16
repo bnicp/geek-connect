@@ -4,8 +4,10 @@
 </div>
 
 <div class="w3-row align-right">
-<h1>{{tag.tag_name}}</h1>
-<img src="{{tag.filename}}" height="100vh" />
+    <div class="w3-rest"></div>
+    <div class="w3-col m2 w3-right" style="color:#fff">.</div>
+ 
+
 </div>
 
 <div class="w3-row">
@@ -15,8 +17,9 @@
         <div class="w3-container">
     
             <div class="card" style="margin-right:20px">
-                <div class="" style="background-color:#7c7c7c; color: #fff">
-                    <h2 class="left-align" style="padding:10px">{{title}}</h2>
+                <div class="w3-row" style="background-color:#7c7c7c; color: #fff">
+                    <div class="w3-col m10 w3-left"><h2 class="left-align" style="padding:10px">{{title}}</h2></div>
+                    <div id="tag_con" class="w3-col m2 w3-right"><img src="{{tag.filename}}" height="100vh" /></div>
                 </div><br />
 
                 <div class="card-body">
@@ -37,7 +40,7 @@
             
             <form id="comment-form">
                 <h3 style="text-align:left;">Post a Comment below:</h3>
-                <textarea id="comment-text-area" style="min-width: 500px; min-height:200px; text-align:left;"></textarea>
+                <textarea id="comment-text-area" style="min-width: 500px; min-height:200px; text-align:left; padding:5px" placeholder="Type a comment or response here!"></textarea>
                 <br /><br />
                 <button id="comment-submit" data-id="{{id}}">Submit Comment</button>
             </form>
@@ -53,13 +56,13 @@
             <div class="w3-card-4" style="">
 
                 <div class="w3-row w3-container gc-{{comment.user.color}}" style="height:4%;">
-                    <div class="w3-col m7"><h3 class="left-align">{{comment.user.username}}</h3></div>
-                    <div class="w3-col m5"><span style="text-align:right; font-size:12px">{{format_date comment.createdAt}} at {{format_time comment.createdAt}}</span></div>
+                    <div class="w3-col m7 s7"><h3 class="left-align">{{comment.user.username}}</h3></div>
+                    <div class="w3-col m5 s5" style="margin-top:6px"><span style="text-align:right; font-size:12px;">{{format_date comment.createdAt}} at {{format_time comment.createdAt}}</span></div>
                     {{!-- <span style="text-align:right;">{{format_date comment.createdAt}} at {{format_time comment.createdAt}}</span> --}}
                 </div>
 
                 <div class="w3-container m4">
-                    <p class="left-align" style="padding-bottom:10px">{{comment.content}}</p>
+                    <p class="left-align" style="padding-bottom:10px; white-space:pre-wrap;">{{comment.content}}</p>
                 </div>
 
             </div>
@@ -78,19 +81,6 @@
             </div>
         {{/if}}
 
-  {{!-- <div class="row">
-    <div class=""><br />
-      <div class="card-body"><br />
-        <p class="card-text">{{comment.content}}</p>
-      </div>
-      <div class="card-footer text-muted">
-        Posted by
-        {{comment.user.username}}
-        on
-        {{format_date comment.createdAt}} at {{format_time comment.createdAt}}
-      </div>
-    </div>
-  </div> --}}
        
     </div>
 </div>
