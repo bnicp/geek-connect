@@ -255,3 +255,42 @@ h5 {
 .hp-logo{
   font-size: 2rem;
 }
+
+/* *, *:before, *:after{
+  text-align:left;
+} */
+
+.left-align{
+  text-align:left !important; 
+  vertical-align: top;
+  padding: 2px;
+}
+
+#profileBtn{
+  position: absolute;
+  right: 9rem;
+  top: 2rem;
+  background-color: white;
+}
+
+.gc-blue{
+  color:#fff;
+  background-color: #0081ff;
+}
+
+.gc-orange{
+  color:#fff;
+  background-color: #d65c28;
+}
+.gc-green{
+  color:#fff;
+  background-color: #5cd12c;
+}
+.gc-pink{
+  color:#fff;
+  background-color:#c3418e;
+}
+.gc-purple{
+  color:#fff;
+  background-color: #963ec0;
+}

@@ -4,6 +4,7 @@
   <h2 id="welcome">Welcome, {{user.username}}!</h2>
 </div>
 <div class="w3-row">
+
   <div class="sticky w3-col s12 m4 w3-center">
     <div class="profile">
       <section class="card profile-card">
@@ -24,12 +25,14 @@
 
       </section>
     </div>
+
   </div>
   <div class="w3-col m8 w3-right">
     <div id="same-tags">
       <div class="w3-col">
 
         {{#each sameTags}}
+
           <div class="card-hover w3-row card same-tag-cards">
             {{! <div class="w3-row"> }}
 
@@ -72,12 +75,15 @@
                         ></textarea><br />
                         <br />
 
-                        <input type="submit" value="Post Now" id="submit" /><br
-                        /><br /><br />
-                      </form>
+
+                      
+                          <input type="submit" value="Post Now" id="submit" /><br><br><br>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
+
               </div>
               {{! End od modal }}
 
@@ -95,14 +101,16 @@
                 {{/each}}
               </section>
             </div>
+
           </div>
         {{/each}}
-
+        
+          
       </div>
     </div>
   </div>
-</div>
+  </div>
 
-<script src="/js/logout.js"></script>
-<script src="/js/profile.js"></script>
-<script src="/js/post_create.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/profile.js"></script>
+    <script src="/js/post_create.js"></script>

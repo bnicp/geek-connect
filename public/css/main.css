@@ -336,4 +336,9 @@ footer {
     position: absolute;
     left: 20%;
   }
+
+  .sticky{
+    position: relative;
+    top: 0;
+  }
 }
