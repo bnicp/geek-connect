@@ -226,6 +226,13 @@ footer {
   right: 2rem;
 }
 
+#logout {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  background-color: white;
+}
+
 #Demo1,
 #Demo2,
 #Demo3,
@@ -330,11 +337,11 @@ footer {
   }
 
   #modalBtn,
-  #signupBtn {
+  #signupBtn, #logout {
     position: absolute;
     top: 5rem;
     right: none;
-    /* background-color: var(--teal); */
+    background-color: var(--teal);
     max-height: 3rem;
   }
 
