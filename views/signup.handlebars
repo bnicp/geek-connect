@@ -3,10 +3,7 @@
 </section>
 
 <!-- ABSOLUTELY NEED -->
-<button
-  onclick="myFunction('Demo1')"
-  class="w3-button w3-block w3-center-align background"
->
+<button onclick="myFunction('Demo1')" class="w3-button w3-block w3-center-align background">
   Star Wars</button>
 <div id="form">
   <div id="Demo1" class="w3-container w3-hide is-grouped type-options">
@@ -23,10 +20,7 @@
       <label for="SW"> Droid</label>
     </form><br />
   </div>
-  <button
-    onclick="myFunction('Demo2')"
-    class="w3-button w3-block w3-center-align background"
-  >
+  <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-center-align background">
     Game of Thrones</button>
 
   <div id="Demo2" class="w3-container w3-hide is-grouped type-options">
@@ -36,7 +30,7 @@
       <input type="radio" id="Targaryen" name="GoT" value="8" />
       <label for="GoT">Targaryen</label>
       <input type="radio" id="Lannister" name="GoT" value="7" />
-      <label for="GoT">Lannister</label>
+      <label for="GoT">Lannister</label><br><br>
       <input type="radio" id="Greyjoy" name="GoT" value="9" />
       <label for="GoT">Greyjoy</label>
       <input type="radio" id="Tyrell" name="GoT" value="10" />
@@ -47,10 +41,7 @@
       <label for="GoT">Dorne</label> }}
     </form><br />
   </div>
-  <button
-    onclick="myFunction('Demo3')"
-    class="w3-button w3-block w3-center-align background"
-  >
+  <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-center-align background">
     Harry Potter</button>
 
   <div id="Demo3" class="w3-container w3-hide">
@@ -59,27 +50,44 @@
         <input type="radio" id="Gryffindor" name="HP" value="12" />
         <label for="HP"> Gryffindor</label>
         <input type="radio" id="Ravenclaw" name="HP" value="14" />
-        <label for="HP"> Ravenclaw</label>
+        <label for="HP"> Ravenclaw</label><br><br>
         <input type="radio" id="Hufflepuff" name="HP" value="13" />
         <label for="HP"> Hufflepuff</label>
         <input type="radio" id="Slytherin" name="HP" value="15" />
         <label for="HP"> Slytherin</label>
-      </form></div><br />
+      </form>
+    </div><br />
   </div>
+  <button onclick="myFunction('profile-pic')" class="w3-button w3-block w3-center-align background">
+    Profile Image</button>
+  <div id="form">
+    <div id="profile-pic" class="w3-container w3-hide is-grouped type-options">
+      <form class="w3-center-align">
+        <input class="dragon2" type="radio" id="blue-dragon" name="dragon2" value="16" />
+        <label for="dragon2"><img src="/images/dragon.svg" style="max-width:10%;"></label>
+        <input class="dragon2" type="radio" id="green-dragon" name="dragon2" value="17" />
+        <label for="dragon2"><img src="/images/dragon_variations/dragon_green.png" style="max-width:10%;"></label>
+        <input class="dragon2" type="radio" id="orange-dragon" name="dragon2" value="18" />
+        <label for="dragon2"><img src="/images/dragon_variations/dragon_orange.png" style="max-width:10%;"></label><br><br>
+        <input class="dragon2" type="radio" id="pink-dragon" name="dragon2" value="19" />
+        <label for="dragon2"><img src="/images/dragon_variations/dragon_pink.png" style="max-width:10%;"></label>
+        <input class="dragon2" type="radio" id="purple dragon" name="dragon2" value="20" />
+        <label for="dragon2"><img src="/images/dragon_variations/dragon_purple.png" style="max-width:10%;"></label>
+      </form><br />
+    </div>
+    <section>
+      <h4>Click update profile to save your choices.</h4>
+    </section>
+    <div>
 
-  <section>
-    <h4>Click update profile to save your choices.</h4>
-  </section>
-  <div>
+      <form>
+        <input type="submit" value="Update Profile" id="submit" /><br />
+      </form>
+      <div id="errorMsg"></div>
+    </div>
+  </div><br />
 
-    <form>
-      <input type="submit" value="Update Profile" id="submit" /><br />
-    </form>
-    <div id="errorMsg"></div>
-  </div>
-</div><br />
-
-<script src="/js/login.js"></script>
-{{!
-<script src="/js/signup.js"></script> }}
-<script src="/js/usertag.js"></script>
+  <script src="/js/login.js"></script>
+  {{!
+  <script src="/js/signup.js"></script> }}
+  <script src="/js/usertag.js"></script>
