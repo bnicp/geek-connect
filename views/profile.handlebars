@@ -7,8 +7,8 @@
   <div class="sticky w3-col s12 m4 w3-center">
     <div class="profile">
       <section class="card profile-card">
-        <h2>Profile</h2>
-        <h3>{{user.username}}</h3>
+        <h3 style="font-size: 1.2rem">Your Profile</h3>
+        <h2>{{user.username}}</h2>
         <img
           src="/images/dragon.svg"
           alt="profile avatar"
@@ -37,7 +37,7 @@
               <h2
                 class="{{0.category.category_name}}"
               >{{0.category.category_name}}</h2>
-              <h3>{{0.tag_name}}</h3>
+              <h3 class="same-tags">{{0.tag_name}}</h3>
               <img src="{{0.filename}}" alt="{{0.filename}}" height="75vh" />
 
               {{! Make a new post modal }}
@@ -82,17 +82,19 @@
               {{! End od modal }}
 
             </div>
-
-            <div class="w3-col s12 m6" style="margin-left:5%;">
-              Check out user posts:<br />
-              {{#each 0.Posts}}
-                <a href="/api/post/tag={{tagId}}/post={{id}}">{{title}}</a>
-                by
-                {{user.username}}
-                <br>
-              {{/each}}
+            <div class="w3-container w3-col m5 s12">
+              <h3 class="w3-row post-section-header" >Check out user posts:</h3>
             </div>
-            {{! </div> }}
+            <div class="posts w3-row" style="margin-left:5%;">
+              <section>
+                {{#each 0.Posts}}
+                  <a href="/api/post/tag={{tagId}}/post={{id}}">{{title}}</a>
+                  by
+                  {{user.username}}
+                  <br>
+                {{/each}}
+              </section>
+            </div>
           </div>
         {{/each}}
 
