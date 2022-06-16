@@ -4,9 +4,9 @@
   <h2 id="welcome">Welcome, {{user.username}}!</h2>
 </div>
 <div class="w3-row">
-  <div class="w3-col m3">
+  <div class="w3-col l3">
   <div class="profile">
-    <div class="w3-col s12 m4 w3-center"></div>
+    <div class="w3-col s12 l3 w3-center"></div>
     <section class="card profile-card">
       <h3 style="font-size: 1.2rem">Your Profile</h3>
       <h2>{{user.username}}</h2>
@@ -21,7 +21,7 @@
   </div>
   </div>
 
-  <div class="w3-col m8 w3-right">
+  <div class="w3-col l9 w3-right">
     <div id="same-tags">
       <div class="w3-col">
 
@@ -29,13 +29,32 @@
         <div class="card-hover w3-row card same-tag-cards">
           {{!-- <div class="w3-row"> --}}
             
-              <div class="w3-col s12 m5">
+              <div class="w3-col s12 l5">
               
                 <h2 class="{{0.category.category_name}}">{{0.category.category_name}}</h2>
                 <h3 class="same-tags">{{0.tag_name}}</h3>
                 <img src="{{0.filename}}" alt="{{0.filename}}" height="75vh" />
          
-                {{! Make a new post modal }}
+                
+
+              
+              </div>
+          
+            <div class="w3-container w3-col l4 s12">
+              <h3 class="w3-row post-section-header" >Check out user posts:</h3>
+            </div>
+            <div class="posts w3-row" style="margin-left:5%;">
+              <section>
+                {{#each 0.Posts}}
+                  <a href="/api/post/tag={{tagId}}/post={{id}}">{{title}}</a>
+                  by
+                  {{user.username}}
+                  <br>
+                {{/each}}
+              </section>
+              
+            </div>
+            {{! Make a new post modal }}
                 <button class="w3-button post_button bouncy" id="post_button" data-id="{{0.id}}">New Post</button>
             
                 <div id="post_modal" class="w3-modal modalx font-color-black">
@@ -59,23 +78,6 @@
                   </div>
                 </div>
                 {{!-- End of modal --}}
-
-              
-              </div>
-          
-            <div class="w3-container w3-col m5 s12">
-              <h3 class="w3-row post-section-header" >Check out user posts:</h3>
-            </div>
-            <div class="posts w3-row" style="margin-left:5%;">
-              <section>
-                {{#each 0.Posts}}
-                  <a href="/api/post/tag={{tagId}}/post={{id}}">{{title}}</a>
-                  by
-                  {{user.username}}
-                  <br>
-                {{/each}}
-              </section>
-            </div>
           </div>
         {{/each}}
         

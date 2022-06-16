@@ -19,14 +19,15 @@
   position: sticky;
   top: 0;
   /* padding-top: 15%; */
-  padding-bottom: 40%;
+  /* padding-bottom: 40%; */
   /* width: 20%; */
-  height: 100vh;
+  /* height: 100vh; */
   /* grid-row-start: 2; */
 }
 
 .profile-img {
   width: 15vh;
+  margin: 3rem 0;
 }
 
 .profile-card {
@@ -38,6 +39,7 @@
   border: .3rem solid #fff;
   /* max-width: 25vw; */
   margin-left: 30px;
+  /* min-width: 400px; */
 }
 
 .profile-card h2 {
@@ -47,13 +49,17 @@
 }
 
 .profile-card h3 {
+  line-height: 2.5rem;
   padding: 0;
   font-size: 2rem;
   text-shadow: 2px 1px 0px #57546a, 5px 4px 0px rgba(0,0,0,0.15);
 }
 
 .profile-card h4 {
+  /* line-height: 2.5rem; */
+  font-size: 1.5rem;
   padding: 0;
+  margin-bottom: 2rem;
 }
 
 .same-tag-cards {
@@ -63,7 +69,7 @@
   color: var(--white);
   border: .3rem solid #fff;
   padding: 30px;
-  margin: 60px;
+  margin: 0 60px 60px 60px;
   position: relative;
   /* max-width: 55vw; */
 }
@@ -80,9 +86,9 @@
 }
 
 .post-section-header {
-  position: absolute;
+  /* position: absolute;
   top: 0%;
-  right: 18%;
+  right: 18%; */
 }
 
 .posts {
@@ -91,15 +97,15 @@
 	justify-content: center;
   overflow: auto;
   min-width: 30%;
-  height: 15vh;
+  height: 17vh;
   /* max-width: 25vw; */
   /* min-height: 15vh; */
   --x: 10%;
 	--y: 10%;
 	
-	position: absolute;
+	/* position: absolute;
   right: 150px;
-  bottom: 2px;
+  bottom: 2px; */
 	appearance: none;
 	/* padding: 1em 2em; */
 	color: white;
@@ -110,6 +116,7 @@
 	/* The magic */
 	border: 2px solid transparent;
 	background: linear-gradient(#0f0e1b, #06040a) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+  margin-bottom: 2%;
 }
 
 .posts section {
@@ -120,7 +127,7 @@
   font-family: "SF Distant Galaxy", sans-serif;
   line-height: 3rem;
   font-size: 3rem;
-  margin-top: -4.3rem;
+  /* margin-top: -4.3rem; */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
@@ -131,7 +138,7 @@
 .Game {
   font-family: "Game of Thrones", sans-serif;
   line-height: 4rem;
-  margin-top: -5rem;
+  /* margin-top: -5rem; */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   text-shadow: 0px 3px 0px #b2a98f,
@@ -144,7 +151,7 @@
   font-family: "Harry Potter", sans-serif;
   font-size: 4rem;
   line-height: 5rem;
-  margin-top: -5rem;
+  /* margin-top: -5rem; */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   text-shadow: 0 1px 0 #ccc, 
@@ -162,7 +169,8 @@
 }
 
 #welcome {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  line-height: 4.5rem;
   background-image: linear-gradient(
     -225deg,
     #231557 0%,
@@ -194,13 +202,6 @@
   grid-column-start: 2;
 }
 
-#logout {
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-  background-color: white;
-}
-
 #post_button {
   display:inline-block;
   padding:0.35em 1.2em;
@@ -214,9 +215,9 @@
   color:#FFFFFF;
   text-align:center;
   transition: all .6s;
-  position: absolute;
+  /* position: absolute;
   top: 15px;
-  right: 15px;
+  right: 15px; */
 }
 
 .bouncy{
