@@ -14,7 +14,7 @@ router.get('/tag=:tagid', withAuth, tagAuth, async (req, res) => {
           {
             model: User,
             attributes: ['username'],
-          },
+          }, 
           // {
           //     model: Comment,
           //     include: {model: User, attributes: ['username']}
@@ -65,14 +65,20 @@ router.get('/tag=:tagid/post=:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['username', 'color'],
+        },
+        {
+          model: Tag
         },
         {
             model: Comment,
-            include: {model: User, attributes: ['username']}
+            include: {model: User, attributes: ['username', 'color']}
 
         }
       ],
+      order:[
+        [ {model: Comment}, 'createdAt', 'DESC']
+      ]
     });
 
     const posts = postData.get({plain:true});

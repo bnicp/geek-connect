@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   try {
     // const tagdata = Tag.hasOne(Category, { as: 'category'});
     const userData = await User.findAll({
-      attributes: ['id', 'username', 'email'],
+      attributes: ['id', 'username', 'email', 'color', 'dragonfile'],
       include: [
         { 
           model: Tag, attributes: ['tag_name', 'id'], include: [{model: Category}]
@@ -71,11 +71,30 @@ router.post('/usertag', async (req, res) => {
       ...req.body,
       user_id: req.session.user_id, 
     });
+    
     res.status(200).json(user_tag)
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
+router.put('/usercolor', async (req, res) => {
+  try {
+    const usercolor = User.update(
+      { color: req.body.color },
+      { where: { id: req.session.user_id}}
+    )
+    
+    const userdragon = User.update(
+      { dragonfile: req.body.dragonfile },
+      { where: { id: req.session.user_id}}
+    )
+    console.log("trying")
+    res.json("Updated")
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
 
 // login route into site
 router.post('/login', async (req, res) => {

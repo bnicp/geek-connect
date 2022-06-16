@@ -39,16 +39,12 @@ User.init(
         len: [8],
       },
     },
-    // indexes: {unique: true}
-    // age: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   validate: {
-    //     isNumeric: true,
-    //     // add restriction on age
-    //   }
-    // },
-    // work on entering interest in which fantasy world
+    color: {
+      type: DataTypes.STRING,
+    },
+    dragonfile: {
+      type: DataTypes.STRING,
+    }
   },
   {
     hooks: {
