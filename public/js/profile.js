@@ -1,3 +1,7 @@
+// function myFunction(x) {
+//     x.classList.toggle("fa-thumbs-down");
+//   }
+
 async function loadTags(){
   const response = await fetch('/profile/test', {
     method: 'GET',
@@ -21,13 +25,3 @@ document.getElementById('button').addEventListener('click', loadTags)
 
   // console.log = tags
 
-  document.querySelector('.posts').onmousemove = (e) => {
-
-    const x = e.pageX - e.target.offsetLeft
-    const y = e.pageY - e.target.offsetTop
-  
-    e.target.style.setProperty('--x', `${ x }px`)
-    e.target.style.setProperty('--y', `${ y }px`)
-    
-  }
-  
