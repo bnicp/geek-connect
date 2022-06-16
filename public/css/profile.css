@@ -1,3 +1,7 @@
+body {
+  background-color:#aaa
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 20% auto;
@@ -24,13 +28,25 @@
 
 .profile-card {
   background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(17,17,33,1) 56%, rgba(129,127,150,1) 72%, rgba(72,90,94,1) 100%);
+  --x: 10%;
+	--y: 10%;
+	background: radial-gradient(#06040a 0%, #0f0e1b 65%, #1c1b2c 90%) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
   color: var(--white);
   border: .3rem solid #fff;
+  /* max-width: 25vw; */
+  margin-left: 30px;
+}
+
+.profile-card h2 {
+  padding: 0;
+  font-size: 3rem;
+  text-shadow: 4px 3px 0px #57546a, 9px 8px 0px rgba(0,0,0,0.60);
 }
 
 .profile-card h3 {
   padding: 0;
+  font-size: 2rem;
+  text-shadow: 2px 1px 0px #57546a, 5px 4px 0px rgba(0,0,0,0.15);
 }
 
 .profile-card h4 {
@@ -39,12 +55,19 @@
 
 .same-tag-cards {
   background: rgb(0,0,0);
-  background: linear-gradient(220deg, rgba(0,0,0,1) 0%, rgba(17,17,33,1) 37%, rgba(129,127,150,1) 65%, rgba(70,90,94,1) 100%);
+  border: -4px solid transparent;
+  background: linear-gradient(220deg, rgba(0,0,0,1) 0%, rgba(17,17,33,1) 65%, rgba(129,127,150,1) 85%, rgba(70,90,94,1) 100%);
   color: var(--white);
   border: .3rem solid #fff;
   padding: 30px;
-  margin: 30px;
+  margin: 60px;
+  position: relative;
+  /* max-width: 55vw; */
 }
+/* .card-hover div:hover {transform: translateY(-50px);} */
+/* .card-hover div:hover {
+  transform: translate(-20px, -40px) rotate(-15deg) scale(1.4);
+} */
 
 .same-tag-cards h4 {
   font-size: 1rem;
@@ -52,30 +75,120 @@
   padding: 0;
 }
 
-.Harry {
-  font-family: "Harry Potter", sans-serif;
-  line-height: 5rem;
-  /* padding-top: 3%; */
+.same-tags {
+  font-size: 1.75rem;
+  text-shadow: 2px 1px 0px #57546a, 5px 4px 0px rgba(0,0,0,0.15);
+}
+
+.post-section-header {
+  position: absolute;
+  top: 0%;
+  right: 18%;
+}
+
+.posts {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  overflow: auto;
+  min-width: 30%;
+  height: 19vh;
+  /* max-width: 25vw; */
+  /* min-height: 15vh; */
+  --x: 10%;
+	--y: 10%;
+	
+	position: absolute;
+  right: 150px;
+  bottom: 0px;
+	appearance: none;
+	/* padding: 1em 2em; */
+	color: white;
+	cursor: pointer;
+	outline: none;
+	/* border-radius: 30px; */
+	
+	/* The magic */
+	border: 2px solid transparent;
+	background: linear-gradient(#0f0e1b, #06040a) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}
+
+.posts section {
+  width: fit-content;
 }
 
 .Star {
   font-family: "SF Distant Galaxy", sans-serif;
   line-height: 3rem;
   font-size: 3rem;
-  padding-top: 10%;
+  margin-top: -4.3rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
 }
 
 .Game {
   font-family: "Game of Thrones", sans-serif;
   line-height: 4rem;
-  padding-top: 3%;
+  margin-top: -5rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 0px 3px 0px #b2a98f,
+                 0px 14px 10px rgba(0,0,0,0.15),
+                 0px 24px 2px rgba(0,0,0,0.1),
+                 0px 34px 30px rgba(0,0,0,0.1);
+}
+
+.Harry {
+  font-family: "Harry Potter", sans-serif;
+  font-size: 4rem;
+  line-height: 5rem;
+  margin-top: -5rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 0 1px 0 #ccc, 
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 }
 
 #welcome {
-  font-size: 2.5rem;
-  font-weight: 900;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #0000ff 67%,
+    #0b0913 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
+      font-size: 4rem;
+      font-weight: 900;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 #same-tags {
@@ -89,7 +202,7 @@
   background-color: white;
 }
 
-#update-btn {
+#post_button {
   display:inline-block;
   padding:0.35em 1.2em;
   border:0.1em solid #FFFFFF;
@@ -101,10 +214,13 @@
   font-weight:300;
   color:#FFFFFF;
   text-align:center;
-  transition: all 0.2s;
+  transition: all .6s;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
-.bouncy{
+.bouncy {
   animation:bouncy 5s infinite linear;
   position:relative;
   }
