@@ -19,7 +19,7 @@ const loginFormHandler = async (event) => {
         // If successful, redirect the browser to the profile page
         document.location.replace('/profile');
       } else {
-        alert(response.statusText);
+        document.getElementById('errMsg').innerHTML=`<span style="color:red"><strong>Email or password is incorrect.</strong></span>`;
       }
     }
   };
