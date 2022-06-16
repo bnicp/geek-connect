@@ -63,23 +63,23 @@ footer {
   border: 2px solid rgb(156, 156, 156);
 }
 
-.HP h1 {
-  font-family: "Harry Potter", sans-serif;
-  line-height: 5rem;
-  /* padding-top: 3%; */
-}
-
 .SW h1 {
   font-family: "SF Distant Galaxy", sans-serif;
   line-height: 3rem;
   font-size: 3rem;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .GoT h1 {
   font-family: "Game of Thrones", sans-serif;
   line-height: 4rem;
   padding-top: 3%;
+}
+
+.HP h1 {
+  font-family: "Harry Potter", sans-serif;
+  line-height: 5rem;
+  padding-top: 5%;
 }
 
 .column {
@@ -182,6 +182,10 @@ footer {
   top: 3rem;
 }
 
+.dragon2 {
+  width: 10%;
+}
+
 .mySlide {
   max-width: 100%;
 }
@@ -215,8 +219,9 @@ footer {
 
 #Demo1,
 #Demo2,
-#Demo3 {
-  margin: 2rem;
+#Demo3,
+#dragon2 {
+  margin: 2rem 0;
 }
 
 .background {
